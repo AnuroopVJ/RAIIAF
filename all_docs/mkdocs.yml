@@ -1,0 +1,22 @@
+site_name: Gen5 File Format Documentation
+site_url: https://mydomain.org/mysite
+theme:
+  name: material
+  palette:
+    # Off-black base
+    scheme: slate
+    
+    # Header and sidebar text (White)
+    primary: lightblue
+
+features:
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details

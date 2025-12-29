@@ -5,16 +5,6 @@ import numpy as np
 import io
 from PIL import Image
 gen5 = Gen5FileHandler()
-#filename (str): Output GEN5 filename. [REQUIRED]
-# latent (Dict[str, np.ndarray]): Dictionary of latent arrays.
-# chunk_records (list): List to append chunk records to.
-# model_name (str): Name of the model.
-# model_version (str): Version of the model.
-# prompt (str): Prompt used for generation.
-# tags (list): List of tags.
-# img_binary (bytes): Binary image data.
-# Returns:
-# dict: Dictionary with header, latent chunks, metadata, and image chunk.
 
 batch_size = 1
 channels = 3  # For RGB images
@@ -36,6 +26,28 @@ gen5.file_encoder(
     prompt="A puppy smiling, cinematic",
     tags=["puppy","dog","smile"],
     img_binary=binary_img_data,
+    convert_float16=False,
+    generation_settings={
+        "seed": 42,
+        "steps": 20,
+        "sampler": "ddim",
+        "cfg_scale": 7.5,
+        "scheduler": "pndm",
+        "eta": 0.0,
+        "guidance": "classifier-free",
+        "precision": "fp16",
+        "deterministic": True
+    },
+    hardware_info={
+        "machine_name": "test_machine",
+        "os": "linux",
+        "cpu": "Intel",
+        "cpu_cores": 8,
+        "gpu": [{"name": "RTX 3090", "memory_gb": 24, "driver": "nvidia", "cuda_version": "12.1"}],
+        "ram_gb": 64.0,
+        "framework": "torch",
+        "compute_lib": "cuda"
+    }
 )
 print("Image Encoded Successfully...")
 decoded = gen5.file_decoder(
@@ -51,11 +63,9 @@ if image_bytes is not None:
     img = Image.open(io.BytesIO(image_bytes))
     img.save("decoded_image.png")
 
-for i, latent_array in enumerate(decoded["chunks"]["latent"]):
-    latent_data = decoded["chunks"].get("latent", [])
-    for i, latent_array in enumerate(latent_data):
-        np.save(f"latent_{i}.npy", latent_array)
-    
+latent_data = decoded["chunks"].get("latent", [])
+for i, latent_array in enumerate(latent_data):
+    np.save(f"latent_{i}.npy", latent_array)
 print("Decoded metadata saved to decoded_metadata.json")
 if image_bytes is not None:
     print("Decoded image saved to decoded_image.png")

@@ -36,83 +36,138 @@ class Gen5FileHandler():
     HEADER_FORMAT = '<4s B B H I I I I Q'  #uses little endian
     HEADER_SIZE = struct.calcsize(HEADER_FORMAT)
     JSON_SCHEMA = """{
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "GEN5 Metadata Schema",
-    "type": "object",
-    
-    "properties": {
-        "gen5_metadata": {
-        "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "GEN5 Metadata Schema",
+  "type": "object",
 
-        "properties": {
+  "properties": {
+    "gen5_metadata": {
+      "type": "object",
 
-            "file_info": {
-            "type": "object",
-            "properties": {
-                "magic":          { "type": "string", "const": "GEN5" },
-                "version_major":  { "type": "integer", "minimum": 1 },
-                "version_minor":  { "type": "integer", "minimum": 0 },
-                "file_size":      { "type": "integer", "minimum": 0 },
-                "chunk_count":    { "type": "integer", "minimum": 0 }
-            },
-            "required": ["magic", "version_major", "version_minor", "file_size", "chunk_count"]
-            },
+      "properties": {
 
-            "model_info": {
-            "type": "object",
-            "properties": {
-                "model_name": { "type": "string" },
-                "version":    { "type": "string" },
-                "date":       { "type": "string" },
-                "prompt":     { "type": "string" },
-                "tags": {
-                "type": "array",
-                "items": { "type": "string" }
-                }
-            },
-            "required": ["model_name", "version", "date", "prompt", "tags"]
-            },
-
-            "chunks": {
-            "type": "array",
-            "items": {
-                "type": "object",
-
-                "properties": {
-                "index":             { "type": "integer", "minimum": 0 },
-                "type":              { "type": "string" },
-                "flags":             { "type": "string" },
-                "offset":            { "type": "integer", "minimum": 0 },
-                "compressed_size":   { "type": "integer", "minimum": 0 },
-                "uncompressed_size": { "type": "integer", "minimum": 0 },
-                "hash":              { "type": "string" },
-                "extra":             { "type": "object" },
-
-                "compressed":        { "type": "boolean" }
-                },
-
-                "required": [
-                "index",
-                "type",
-                "flags",
-                "offset",
-                "compressed_size",
-                "uncompressed_size",
-                "hash",
-                "extra",
-                "compressed"
-                ]
-            }
-            }
+        "file_info": {
+          "type": "object",
+          "properties": {
+            "magic":          { "type": "string", "const": "GEN5" },
+            "version_major":  { "type": "integer", "minimum": 1 },
+            "version_minor":  { "type": "integer", "minimum": 0 },
+            "file_size":      { "type": "integer", "minimum": 0 },
+            "chunk_count":    { "type": "integer", "minimum": 0 }
+          },
+          "required": [
+            "magic",
+            "version_major",
+            "version_minor",
+            "file_size",
+            "chunk_count"
+          ]
         },
 
-        "required": ["file_info", "model_info", "chunks"]
-        }
-    },
+        "model_info": {
+          "type": "object",
+          "properties": {
+            "model_name": { "type": "string" },
+            "version":    { "type": "string" },
+            "date":       { "type": "string" },
+            "prompt":     { "type": "string" },
+            "tags": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
 
-    "required": ["gen5_metadata"]
+            "generation_settings": {
+              "type": "object",
+              "properties": {
+                "seed":         { "type": "integer", "minimum": 0 },
+                "steps":        { "type": "integer", "minimum": 1 },
+                "sampler":      { "type": "string" },
+                "cfg_scale":    { "type": "number", "minimum": 0 },
+                "scheduler":    { "type": "string" },
+                "eta":          { "type": "number", "minimum": 0 },
+                "guidance":     { "type": "string" },
+                "precision":    { "type": "string" },
+                "deterministic":{ "type": "boolean" }
+              },
+              "required": ["seed", "steps", "sampler"]
+            },
+
+            "hardware_info": {
+              "type": "object",
+              "properties": {
+                "machine_name": { "type": "string" },
+                "os":           { "type": "string" },
+                "cpu":          { "type": "string" },
+                "cpu_cores":    { "type": "integer", "minimum": 1 },
+
+                "gpu": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name":         { "type": "string" },
+                      "memory_gb":    { "type": "number", "minimum": 0 },
+                      "driver":       { "type": "string" },
+                      "cuda_version": { "type": "string" }
+                    },
+                    "required": ["name"]
+                  }
+                },
+
+                "ram_gb":      { "type": "number", "minimum": 0 },
+                "framework":   { "type": "string" },
+                "compute_lib": { "type": "string" }
+              },
+              "required": ["os"]
+            }
+          },
+
+          "required": [
+            "model_name",
+            "version",
+            "date",
+            "prompt",
+            "tags"
+          ]
+        },
+
+        "chunks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "index":             { "type": "integer", "minimum": 0 },
+              "type":              { "type": "string" },
+              "flags":             { "type": "string" },
+              "offset":            { "type": "integer", "minimum": 0 },
+              "compressed_size":   { "type": "integer", "minimum": 0 },
+              "uncompressed_size": { "type": "integer", "minimum": 0 },
+              "hash":              { "type": "string" },
+              "extra":             { "type": "object" },
+              "compressed":        { "type": "boolean" }
+            },
+            "required": [
+              "index",
+              "type",
+              "flags",
+              "offset",
+              "compressed_size",
+              "uncompressed_size",
+              "hash",
+              "extra",
+              "compressed"
+            ]
+          }
+        }
+      },
+
+      "required": ["file_info", "model_info", "chunks"]
     }
-    """
+  },
+
+  "required": ["gen5_metadata"]
+}
+"""
     
     @classmethod
     def header_init(
@@ -196,17 +251,22 @@ class Gen5FileHandler():
             bytes: PNG image data in bytes.
 
         """
-        with Image.open(png_path) as img:
-            img = img.convert("RGBA") 
-            buf = io.BytesIO()
-            img.save(buf, format="PNG")
-            return buf.getvalue()
-    @staticmethod
+        try:
+            with Image.open(png_path) as img:
+                img = img.convert("RGBA") 
+                buf = io.BytesIO()
+                img.save(buf, format="PNG")
+                return buf.getvalue()
+        except Exception as e:
+            raise Gen5ImageError(f"Failed to convert PNG to bytes: {e}") from e    @staticmethod
     def bytes_to_png(img_bytes: bytes) -> Image.Image:
         """Convert bytes back to PNG image."""
-        buffer = io.BytesIO(img_bytes)
-        img = Image.open(buffer)
-        return img
+        try:
+            buffer = io.BytesIO(img_bytes)
+            img = Image.open(buffer)
+            return img
+        except Exception as e:
+            raise Gen5ImageError(f"Failed to convert bytes to PNG: {e}") from e
 
     def _chunk_packer_binary(self, chunk_type:bytes, chunk_flags: bytes, data:bytes) -> bytes:
         """
@@ -228,14 +288,22 @@ class Gen5FileHandler():
         
     #METADATA
     def metadata_validator(self, manifest) -> bool:
-        """Validate and compress metadata manifest using JSON Schema and zstd."""
+        """Validate metadata manifest using JSON Schema.
+        Args:
+            manifest (dict): Metadata manifest.
+        Returns:
+            bool: True if it is valid or False otherwise.
+        Raises:
+            Gen5MetadataError: If the metadata is invalid.
+        """
         json_schema = self.JSON_SCHEMA
         schema = json.loads(json_schema)
         try:
             jsonschema.validate(instance=manifest, schema=schema)
             return True
-        except jsonschema.ValidationError:
-            return False
+        except Exception as e:
+            raise Gen5MetadataError(f"Invalid metadata: {e}")
+            
                 
     def metadata_compressor(self, manifest):
         json_bytes = json.dumps(manifest, indent=2).encode("utf-8")
@@ -254,8 +322,11 @@ class Gen5FileHandler():
         model_version: str,
         prompt: str,
         tags: list,
-        chunk_records: list
+        chunk_records: list,
+        generation_settings: Optional[dict] = None,
+        hardware_info: Optional[dict] = None
     ):
+
         """
         chunk_records must be a list of dicts, with each having:
             {
@@ -294,10 +365,36 @@ class Gen5FileHandler():
                     "version": model_version,
                     "date": datetime.now(UTC).isoformat(),
                     "prompt": prompt,
-                    "tags": tags
+                    "tags": tags,
+
+                    "generation_settings": generation_settings or {
+                        "seed": 0,
+                        "steps": 0,
+                        "sampler": "",
+                        "cfg_scale": 0.0,
+                        "scheduler": "",
+                        "eta": 0.0,
+                        "guidance": "",
+                        "precision": "fp16",
+                        "deterministic": True
+                    },
+
+                    "hardware_info": hardware_info or {
+                        "machine_name": "",
+                        "os": "",
+                        "cpu": "",
+                        "cpu_cores": 0,
+                        "gpu": [],
+                        "ram_gb": 0.0,
+                        "framework": "",
+                        "compute_lib": ""
+                    }
                 },
 
+                
+                
                 "chunks": []
+                
             }
         }
 
@@ -333,21 +430,32 @@ class Gen5FileHandler():
         return manifest
 
     #IMAGE-DATA
-    @staticmethod
-    def image_data_chunk_builder(image_binary):
-        """Build image data chunk from binary image data.
+    def image_bytes_validator(self, image_bytes: bytes):
+        """Validate image bytes.
         Args:
-            image_binary (bytes): Binary image data.
-        Returns:
-            bytes: Compressed image data chunk.
+            image_bytes (bytes): Image bytes to validate.
         """
-        chunk_type = b'DATA'
-        chunk_flags = b'0000'
-        chunk_size = len(image_binary)
-        chunk_header = struct.pack('<4s 4s I', chunk_type, chunk_flags, chunk_size)
-        chunk = chunk_header + image_binary
-        compressed_chunk = ZstdCompressor().compress(chunk)
-        return compressed_chunk
+        try:
+            img = io.BytesIO(image_bytes)
+            with Image.open(img) as img:
+                img.verify()
+            return True
+        except Exception as e:
+            raise Gen5ImageError(f"Invalid image bytes: {e}")
+
+
+    def image_data_chunk_builder(self, image_binary: bytes):
+        self.image_bytes_validator(image_binary)
+        try:
+            chunk_type = b'DATA'
+            chunk_flags = b'0000'
+            chunk_size = len(image_binary)
+            chunk_header = struct.pack('<4s 4s I', chunk_type, chunk_flags, chunk_size)
+            chunk = chunk_header + image_binary
+            compressed_chunk = ZstdCompressor().compress(chunk)
+            return compressed_chunk         
+        except Exception as e:
+            raise Gen5ImageError(f"Failed to build image data chunk: {e}") from e
 
     def image_data_chunk_parser(self, compressed_chunk):
         """Parse image data chunk.
@@ -356,16 +464,19 @@ class Gen5FileHandler():
         Returns:
             dict: Parsed image data chunk information.
         """
-        decompressor = ZstdDecompressor()
-        chunk = decompressor.decompress(compressed_chunk)
-        chunk_type, chunk_flags, chunk_size = struct.unpack('<4s 4s I', chunk[:12])
-        image_data = chunk[12:12+chunk_size]
-        return {
-            "chunk_type": chunk_type,
-            "chunk_flags": chunk_flags,
-            "chunk_size": chunk_size,
-            "image_data": image_data
-        }
+        try:
+            decompressor = ZstdDecompressor()
+            chunk = decompressor.decompress(compressed_chunk)
+            chunk_type, chunk_flags, chunk_size = struct.unpack('<4s 4s I', chunk[:12])
+            image_data = chunk[12:12+chunk_size]
+            return {
+                "chunk_type": chunk_type,
+                "chunk_flags": chunk_flags,
+                "chunk_size": chunk_size,
+                "image_data": image_data
+            }
+        except Exception as e:
+            raise Gen5ImageError(f"Failed to parse image data chunk: {e}") from e
 
     #LATENT CHUNK
     def latent_packer(self, latent: Dict[str, np.ndarray], file_offset: int = 0, chunk_records=None, should_compress: bool = True, convert_float16: bool = True) -> list:
@@ -434,8 +545,10 @@ class Gen5FileHandler():
         """
         if compressed == True:
             decompressor = ZstdDecompressor()
-            decompressed = decompressor.decompress(compressed_chunk)
-
+            try:
+                decompressed = decompressor.decompress(compressed_chunk)
+            except Exception as e:
+                raise Gen5LatentError(f"Failed to decompress latent chunk: {e}")
             if len(decompressed) < 12:
                 raise Gen5LatentError("Truncated latent chunk")
 
@@ -446,7 +559,6 @@ class Gen5FileHandler():
                 raise Gen5LatentError("Truncated latent chunk")
 
             flag_str = chunk_flags.decode("utf-8", errors="ignore").replace('\x00', '').strip()
-
             if flag_str == "F16":
                 dtype = np.float16
             elif flag_str == "F32":
@@ -459,9 +571,9 @@ class Gen5FileHandler():
             print("expected bytes:", np.prod(shape) * np.dtype(dtype).itemsize)
             expected = np.prod(shape) * np.dtype(dtype).itemsize
             if len(data_bytes) != expected:
-                raise ValueError(
+                raise Gen5LatentError(
                     f"Size mismatch: expected {expected} bytes, got {len(data_bytes)}"
-                )
+                    )
             arr = np.frombuffer(data_bytes, dtype=dtype).copy()
             arr = arr.reshape(shape)
             return arr
@@ -487,7 +599,7 @@ class Gen5FileHandler():
     #RUNNING
 
     def file_encoder(self, filename: str, latent: Dict[str, np.ndarray], chunk_records: list,
-                    model_name: str, model_version: str, prompt: str, tags: list, img_binary: bytes, should_compress: bool = True, convert_float16: bool = True):
+                    model_name: str, model_version: str, prompt: str, tags: list, img_binary: bytes, should_compress: bool = True, convert_float16: bool = True, generation_settings: Optional[dict] = None, hardware_info: Optional[dict] = None):
         """ Orchestrator function to encode GEN5 file.
         Args:
             filename (str): Output GEN5 filename. [.gen5 extension is REQUIRED]
@@ -537,14 +649,17 @@ class Gen5FileHandler():
             model_version=model_version,
             prompt=prompt,
             tags=tags,
-            chunk_records=chunk_records
+            chunk_records=chunk_records,
+            generation_settings=generation_settings,
+            hardware_info=hardware_info
         )
-
-        # compress metadata
+        #ensure that manifest/metadata is valid
+        self.metadata_validator(manifest)
+        #compress metadata
         compressed_metadata = self.metadata_compressor(manifest)
         metadata_size = len(compressed_metadata)
         
-        # calculate total file size
+        #calculate total file size
         total_file_size = self.HEADER_SIZE + len(latent_chunk) + (len(image_chunk) if image_chunk else 0) + metadata_size
 
         #update file_size in manifest
@@ -597,8 +712,6 @@ class Gen5FileHandler():
             f.seek(header['chunk_table_offset'])
             metadata_compressed = f.read(header['chunk_table_size'])
             metadata = self.metadata_parser(metadata_compressed)
-            if not self.metadata_validator(metadata):
-                raise Gen5MetadataError(message=f"Invalid metadata: {metadata}")
             chunk_records = metadata['gen5_metadata']['chunks']
             chunks = {}
             chunks['latent'] = []
@@ -676,4 +789,3 @@ class Gen5FileHandler():
         for record in chunk_records:
             if record['type'] == "LATN":
                 yield self.make_lazy_latent_loader(filename, record)
-

@@ -1,3 +1,5 @@
+# .gen5 File Format - The AI-native File Format
+
 ## Overview
 
 Gen5 is a binary container format aimed at increased reproducibility for AI-generated images. It enables the storage of several key pieces of information, such as :

@@ -101,4 +101,7 @@ if image_bytes is not None:
 # LICENSE
 MIT
 # Contribution
-Please refer to CONTRIBUTING.md filein the repo
+Please refer to the CONTRIBUTING.md filein the repo
+# Documentation
+Please refer to the 'all_docs' directory
+

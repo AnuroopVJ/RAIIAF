@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gen5.core.exceptions &#8212; Gen5 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="gen5.core.header" href="gen5.core.header.html" />
+    <link rel="prev" title="gen5.core.constants" href="gen5.core.constants.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-gen5.core.exceptions">
+<span id="gen5-core-exceptions"></span><h1>gen5.core.exceptions<a class="headerlink" href="#module-gen5.core.exceptions" title="Link to this heading">¶</a></h1>
+<p class="rubric">Exceptions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gen5.core.exceptions.Gen5ChunkError" title="gen5.core.exceptions.Gen5ChunkError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Gen5ChunkError</span></code></a>(message)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gen5.core.exceptions.Gen5CorruptHeader" title="gen5.core.exceptions.Gen5CorruptHeader"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Gen5CorruptHeader</span></code></a>(message)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gen5.core.exceptions.Gen5DecodeError" title="gen5.core.exceptions.Gen5DecodeError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Gen5DecodeError</span></code></a>(message)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gen5.core.exceptions.Gen5EnvChunkError" title="gen5.core.exceptions.Gen5EnvChunkError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Gen5EnvChunkError</span></code></a>(message)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gen5.core.exceptions.Gen5ImageError" title="gen5.core.exceptions.Gen5ImageError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Gen5ImageError</span></code></a>(message)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gen5.core.exceptions.Gen5LatentError" title="gen5.core.exceptions.Gen5LatentError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Gen5LatentError</span></code></a>(message)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gen5.core.exceptions.Gen5MetadataError" title="gen5.core.exceptions.Gen5MetadataError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Gen5MetadataError</span></code></a>(message)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py exception">
+<dt class="sig sig-object py" id="gen5.core.exceptions.Gen5ChunkError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gen5.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">Gen5ChunkError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gen5/core/exceptions.html#Gen5ChunkError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.exceptions.Gen5ChunkError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gen5.core.exceptions.Gen5DecodeError" title="gen5.core.exceptions.Gen5DecodeError"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gen5DecodeError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="gen5.core.exceptions.Gen5CorruptHeader">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gen5.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">Gen5CorruptHeader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gen5/core/exceptions.html#Gen5CorruptHeader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.exceptions.Gen5CorruptHeader" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gen5.core.exceptions.Gen5DecodeError" title="gen5.core.exceptions.Gen5DecodeError"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gen5DecodeError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="gen5.core.exceptions.Gen5DecodeError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gen5.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">Gen5DecodeError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gen5/core/exceptions.html#Gen5DecodeError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.exceptions.Gen5DecodeError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="gen5.core.exceptions.Gen5EnvChunkError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gen5.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">Gen5EnvChunkError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gen5/core/exceptions.html#Gen5EnvChunkError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.exceptions.Gen5EnvChunkError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gen5.core.exceptions.Gen5ChunkError" title="gen5.core.exceptions.Gen5ChunkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gen5ChunkError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="gen5.core.exceptions.Gen5ImageError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gen5.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">Gen5ImageError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gen5/core/exceptions.html#Gen5ImageError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.exceptions.Gen5ImageError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gen5.core.exceptions.Gen5ChunkError" title="gen5.core.exceptions.Gen5ChunkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gen5ChunkError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="gen5.core.exceptions.Gen5LatentError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gen5.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">Gen5LatentError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gen5/core/exceptions.html#Gen5LatentError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.exceptions.Gen5LatentError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gen5.core.exceptions.Gen5ChunkError" title="gen5.core.exceptions.Gen5ChunkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gen5ChunkError</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="gen5.core.exceptions.Gen5MetadataError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gen5.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">Gen5MetadataError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gen5/core/exceptions.html#Gen5MetadataError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.exceptions.Gen5MetadataError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#gen5.core.exceptions.Gen5DecodeError" title="gen5.core.exceptions.Gen5DecodeError"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gen5DecodeError</span></code></a></p>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Gen5</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html#package-index">Package Index</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-gen5">Top-level Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-gen5.handlers.file_handler">Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-gen5.chunks.latent">Chunks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-gen5.core.constants">Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#notes">Notes</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../api.html">API Reference</a><ul>
+  <li><a href="gen5.html">gen5</a><ul>
+  <li><a href="gen5.core.html">gen5.core</a><ul>
+      <li>Previous: <a href="gen5.core.constants.html" title="previous chapter">gen5.core.constants</a></li>
+      <li>Next: <a href="gen5.core.header.html" title="next chapter">gen5.core.header</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Anuroop V J.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/api/gen5.core.exceptions.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

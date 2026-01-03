@@ -139,7 +139,8 @@ MIT
 # Contribution
 Please refer to the CONTRIBUTING.md filein the repo
 # Documentation
-Please refer to the 'all_docs' directory.
+Full docs: https://anuroopvj.github.io/gen5/api.html
+
 # Future improvements
 - Supporting other frameworks and utilities in the EnvChunk
 - Reducing File Size

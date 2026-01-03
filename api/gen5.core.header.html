@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>gen5.core.header &#8212; Gen5 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="gen5.core.exceptions" href="gen5.core.exceptions.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-gen5.core.header">
+<span id="gen5-core-header"></span><h1>gen5.core.header<a class="headerlink" href="#module-gen5.core.header" title="Link to this heading">¶</a></h1>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gen5.core.header.header_init" title="gen5.core.header.header_init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">header_init</span></code></a>([version_major, version_minor, ...])</p></td>
+<td><p>Initialize GEN5 file header.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gen5.core.header.header_parse" title="gen5.core.header.header_parse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">header_parse</span></code></a>(data)</p></td>
+<td><p>Parse GEN5 file header.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gen5.core.header.header_validate" title="gen5.core.header.header_validate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">header_validate</span></code></a>(header)</p></td>
+<td><p>Validate GEN5 file header.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="gen5.core.header.header_init">
+<span class="sig-prename descclassname"><span class="pre">gen5.core.header.</span></span><span class="sig-name descname"><span class="pre">header_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version_major</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version_minor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_table_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_table_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reserved</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gen5/core/header.html#header_init"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.header.header_init" title="Link to this definition">¶</a></dt>
+<dd><p>Initialize GEN5 file header.
+Returns the packed header bytes.
+:param version_major: Major version number.
+:type version_major: int
+:param version_minor: Minor version number.
+:type version_minor: int
+:param flags: Header flags.
+:type flags: int
+:param chunk_table_offset: Offset to the chunk table.
+:type chunk_table_offset: int
+:param chunk_table_size: Size of the chunk table.
+:type chunk_table_size: int
+:param chunk_count: Number of chunks.
+:type chunk_count: int
+:param file_size: Total file size.
+:type file_size: int
+:param reserved: Reserved for future use.
+:type reserved: int</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gen5.core.header.header_parse">
+<span class="sig-prename descclassname"><span class="pre">gen5.core.header.</span></span><span class="sig-name descname"><span class="pre">header_parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gen5/core/header.html#header_parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.header.header_parse" title="Link to this definition">¶</a></dt>
+<dd><p>Parse GEN5 file header.
+:param data: The header bytes to parse.
+:type data: bytes
+:param Returns:
+:param dict: Parsed header fields.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Parsed header fields.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gen5.core.header.header_validate">
+<span class="sig-prename descclassname"><span class="pre">gen5.core.header.</span></span><span class="sig-name descname"><span class="pre">header_validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/gen5/core/header.html#header_validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.header.header_validate" title="Link to this definition">¶</a></dt>
+<dd><p>Validate GEN5 file header.
+:param header: Parsed header fields.
+:type header: dict
+:param Returns:
+:param bool: True if it is valid or False otherwise.</p>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Gen5</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../api.html">API Reference</a><ul>
+      <li>Previous: <a href="gen5.core.exceptions.html" title="previous chapter">gen5.core.exceptions</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Anuroop V J.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/api/gen5.core.header.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

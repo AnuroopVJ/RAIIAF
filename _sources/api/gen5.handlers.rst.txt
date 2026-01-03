@@ -1,0 +1,13 @@
+gen5.handlers
+=============
+
+.. automodule:: gen5.handlers
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   file_handler

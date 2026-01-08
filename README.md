@@ -16,6 +16,42 @@
 - Environment info stored automatically as hashed canonical strings
 - Issues warnings if environment drift is detected!
 
+## Storage Efficiency Benchmark (Full Latent Tensor)
+
+We evaluate the storage overhead of different industry-standard strategies for embedding large AI metadata by comparing how the same image and the same latent tensor are stored across multiple file formats.
+
+### Experimental Setup
+- **Images:** 5 PNG images
+- **Latent tensor:** Shape (1, 4, 64, 64), approximately 89 KB
+- **Metadata:** Identical semantic metadata across all formats
+- **GEN5 implementation:** Official `gen5` API (v0.1.0), no mocks
+- **Metric:** Relative file size overhead compared to the raw PNG baseline
+
+### Compared Storage Strategies
+- **Raw PNG:** Image only (baseline)
+- **PNG + Embedded XMP:** Latent tensor serialized as XMP and embedded inside the PNG
+- **PNG + XMP Sidecar:** Latent tensor stored in a separate `.xmp` file alongside the PNG
+- **GEN5 (.gen5):** Single-file, binary container storing both image and latent tensor
+
+### Results
+The average file sizes and relative overheads are summarized below:
+
+| Format | Avg. Size (KB) | Avg. Overhead (%) |
+|------|---------------|-------------------|
+| Raw PNG | 1708.3 | – |
+| GEN5 (.gen5) | 1739.3 | 1.8 |
+| PNG + Embedded XMP | 1797.9 | 5.2 |
+| PNG + XMP Sidecar | 1795.2 | 5.1 |
+
+![Storage overhead comparison for different metadata strategies](benchmark.png)
+
+### Interpretation
+For the same image and identical latent tensor, XMP-based workflows incur approximately 5.1–5.2% storage overhead, regardless of whether the metadata is embedded or stored as a sidecar file. In contrast, GEN5 introduces only ~1.8% overhead.
+
+This corresponds to a ~3.3% absolute reduction in file size and approximately 65% lower relative metadata overhead compared to standard XMP-based approaches, while preserving a single-file workflow.
+
+These results indicate that a binary, AI-native container can store large latent tensors more space-efficiently than XML-based metadata strategies under identical conditions.
+
 # Why not just use EXIF/XMP/Sidecar files?
 Here is an emperical comparison:
 

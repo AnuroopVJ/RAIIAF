@@ -29,6 +29,9 @@ Separately, IPTC has recently proposed separate fields for storing AI related me
 
 Work by [@Guo_2024_CVPR] demonstrates that optimizing the initial noise before sampling leads to images that are more semantically aligned with the input prompt. Importantly, once an optimized noise tensor is obtained, it can be reused to regenerate the same aligned image under deterministic sampling conditions. Thus, storing the optimized initial noise offers a practical mechanism for improving reproducibility and consistency in text-to-image generation, while still benefiting from the alignment gains introduced by INITNO.
 
+Benchmarks were performed that involved using same PNG data for each comparisons of relative file size overhead. One full latent tensor per image with shape (1, 4, 64, 64), approximately 88–89 KB, was stored in diffrent methods: 1. with gen5 2. with PNG and XMP (sidecar) and 3. PNG with embedded XMP. Here, the raw PNG with just the image data is considered as the baseline. Reported metric is the relative percentage of file size overhead: ((size_with_metadata − size_raw_png) / size_raw_png) × 100.
+In this bechmark it was observed that gen5 representation only introduced ~1.8% overhead whereas the sidecar and embedded XMP approaches introducing ~5.1% and ~5.2% respectively.
+
 A review of current AI-native formats, including AIGIF [@Gao2024TowardsDA], IPTC AI metadata [@iptc2025], and diffusion model checkpoints, reveals no comprehensive solution that embeds latent states directly alongside the image in a unified container. Gen5 fills this niche by ensuring that all components necessary for analysis, comparison, and reuse remain inseparable during sharing, archiving, or processing.
 
 # References

@@ -50,10 +50,10 @@ A review of current AI-native formats, including AIGIF [@Gao2024TowardsDA], IPTC
 The gen5 binary container storage solution has been designed with a chunk-based storage method for easy extensibility and usage. The chunk structure is as follows: 
 | Chunk Type     | ID (4 bit ASCII) | If Standalone | If Compressed | Structure and Location                                                                 | Additional Notes |
 |----------------|-------------------|-------------|-------------|--------------------------------------------------------------------------------------|---------------|
-| **Latent**     | `LATN`            |  Yes      | Optional    | Raw/compressed tensor bytes at `offset` in file                                     | Shape stored in metadata `extra` field |
-| **Image**      | `DATA`            | Yes      | Yes (PNG)   | PNG bytes at `offset` in file                                                        | Always compressed |
-| **Environment**| `ENVC`            | Yes      | Yes (gzip)  | Header (`<4s4sI`) + gzipped JSON at `offset`                                         | Captures runtime env |
-| **Metadata**   | `META`            | Yes  | Yes (zstd)  | 12-byte header (`<4s4sI` = `b"META"`, flags, JSON size) + zstd-compressed JSON manifest | Stored at `chunk_table_offset` (from file header)<br> NOT listed in its own `chunks[]` array |
+| **Latent**     | `LATN`            |  Yes        | Optional    | Raw/compressed tensor bytes at `offset` in file                                     | Shape stored in metadata `extra` field |
+| **Image**      | `DATA`            | Yes         | Yes (PNG)   | PNG bytes at `offset` in file                                                        | Always compressed |
+| **Environment**| `ENVC`            | Yes        | Yes (gzip)  | Header (`<4s4sI`) + gzipped JSON at `offset`                                         | Captures runtime env |
+| **Metadata**   | `META`            | Yes         | Yes (zstd)  | 12-byte header (`<4s4sI` = `b"META"`, flags, JSON size) + zstd-compressed JSON manifest | Stored at `chunk_table_offset` (from file header)<br> NOT listed in its own `chunks[]` array |
 
 The environment information has been stored in both metadata and a separate environment chunk. However, only the most essential ones have been included in metadata, which is intended for human preview, and the ones in the environment chunk are for issuing a warning when an environment mismatch is detected. The information in the environment chunkis also hashed canonical strings, which are compared with those of the current environment to determine if there is a potential mismatch.
 

@@ -43,7 +43,7 @@ The average file sizes and relative overheads are summarized below:
 | PNG + Embedded XMP | 1797.9 | 5.2 |
 | PNG + XMP Sidecar | 1795.2 | 5.1 |
 
-![Storage overhead comparison for different metadata strategies](download.png)
+![Storage overhead comparison for different metadata strategies](paper/graph.png)
 
 ### Interpretation
 For the same image and identical latent tensor, XMP-based workflows incur approximately 5.1–5.2% storage overhead, regardless of whether the metadata is embedded or stored as a sidecar file. In contrast, GEN5 introduces only ~1.8% overhead.

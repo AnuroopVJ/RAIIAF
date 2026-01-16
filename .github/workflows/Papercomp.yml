@@ -15,4 +15,3 @@ jobs:
         uses: openjournals/openjournals-draft-action@v1.0
         with:
           paper-path: paper
-          entryPoint: paper.md

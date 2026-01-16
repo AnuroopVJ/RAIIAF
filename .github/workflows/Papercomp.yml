@@ -1,17 +1,20 @@
-name: Build draft PDF
-
-on:
-  pull_request:
-  push:
-    branches: [ master ]
-
+name: Draft PDF
+on: 
+  workflow_dispatch:
 jobs:
-  draft:
+  paper:
     runs-on: ubuntu-latest
+    name: Paper Draft
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Build Open Journals draft
-        uses: openjournals/openjournals-draft-action@v1.0
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build draft PDF
+        uses: openjournals/openjournals-draft-action@master
         with:
-          paper-path: paper
+          journal: joss
+          paper-path: paper/paper.md 
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: paper
+          path: paper/paper.pdf

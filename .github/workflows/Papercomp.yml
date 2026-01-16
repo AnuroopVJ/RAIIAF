@@ -1,4 +1,4 @@
-name: Compile the draft PDF
+name: Build draft PDF
 
 on:
   pull_request:
@@ -14,4 +14,4 @@ jobs:
       - name: Build Open Journals draft
         uses: openjournals/openjournals-draft-action@v1.0
         with:
-          paper_path: paper
+          paper-path: paper

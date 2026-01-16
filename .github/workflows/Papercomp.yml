@@ -1,2 +1,17 @@
-- name: Open Journals PDF Generator
-  uses: openjournals/openjournals-draft-action@v1.0
+name: Compile the draft PDF
+
+on:
+  pull_request:
+  push:
+    branches: [ master ]
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Open Journals draft
+        uses: openjournals/openjournals-draft-action@v1.0
+        with:
+          paper_path: paper

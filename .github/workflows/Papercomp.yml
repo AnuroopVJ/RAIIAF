@@ -3,7 +3,7 @@ name: Build draft PDF
 on:
   pull_request:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   draft:

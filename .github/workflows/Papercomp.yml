@@ -3,7 +3,7 @@ name: Build draft PDF
 on:
   pull_request:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   draft:
@@ -15,3 +15,4 @@ jobs:
         uses: openjournals/openjournals-draft-action@v1.0
         with:
           paper-path: paper
+          entryPoint: paper.md

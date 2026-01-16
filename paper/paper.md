@@ -41,6 +41,8 @@ In this benchmark, it was observed that the GEN5 representation introduced only 
 | PNG + Embedded XMP | 1797.9 | 5.2 |
 | PNG + XMP Sidecar | 1795.2 | 5.1 |
 
+The relative storage overhead is visualized in Figure 1.
+
 ![Storage overhead comparison](graph.png)
 
 A review of current AI-native formats, including AIGIF [@Gao2024TowardsDA], IPTC AI metadata [@iptc2025], and diffusion model checkpoints, reveals no single comprehensive solution that embeds latent states directly alongside the image in a unified container. Gen5 fills this niche by ensuring that all components necessary for analysis, comparison, and reuse remain inseparable during sharing, archiving, or processing.

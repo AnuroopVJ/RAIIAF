@@ -3,6 +3,8 @@
 .pytest_cache
 .devcontainer
 __pycache__
+example.png
+
 #egg
 *.egg-info
 #dist dir

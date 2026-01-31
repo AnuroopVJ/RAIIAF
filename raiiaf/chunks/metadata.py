@@ -136,16 +136,27 @@ class Gen5Metadata:
 
             #build chunk list with indexes
             for idx, rec in enumerate(chunk_records):
+                # Use a robust mapping for compressed_size to handle different record schemas
+                compressed_size = rec.get(
+                    "compressed_size",
+                    rec.get(
+                        "compressed_size_header",
+                        rec.get("len_header", 0) + rec.get("len_data", 0)
+                    )
+                )
                 manifest["gen5_metadata"]["chunks"].append({
                     "index": idx,
                     "type": rec["type"],
                     "flags": rec["flags"],
                     "offset": rec["offset"],
-                    "compressed_size": rec["compressed_size"],
+                    "compressed_size": compressed_size,
                     "uncompressed_size": rec["uncompressed_size"],
                     "hash": rec["hash"],
                     "extra": rec.get("extra", {}),
-                    "compressed": rec.get("compressed", True)
+                    "compressed": rec.get("compressed", True),
+                    # Provide split points for compressed LATN chunks when available
+                    "len_header": rec.get("len_header"),
+                    "len_data": rec.get("len_data")
                 })
 
             

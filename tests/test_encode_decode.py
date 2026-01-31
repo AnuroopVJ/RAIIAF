@@ -7,10 +7,10 @@ import pytest
 import json.decoder
 import zstandard as zstd
 import copy
-from gen5 import Gen5FileHandler
-from gen5.core.exceptions import Gen5CorruptHeader, Gen5MetadataError, Gen5ImageError, Gen5ChunkError
-from gen5.chunks.metadata import Gen5Metadata
-from gen5.core.header import header_parse
+from raiiaf import Gen5FileHandler
+from raiiaf.core.exceptions import Gen5CorruptHeader, Gen5MetadataError, Gen5ImageError, Gen5ChunkError
+from raiiaf.chunks.metadata import Gen5Metadata
+from raiiaf.core.header import header_parse
 from PIL import Image
 import io
 gen5 = Gen5FileHandler()

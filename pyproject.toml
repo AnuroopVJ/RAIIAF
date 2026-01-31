@@ -3,17 +3,28 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "gen5"
-version = "0.1.0"
-description = "GEN5: A Binary Container Format For Improving Reproducibility In Workflows Concerning AI-Generated Images"
+name = "raiiaf"
+version = "1.0.0"
+description = "RAIIAF: A binary artifact format for preserving AI image generation context and latent representations"
 readme = "README.md"
 requires-python = ">=3.9"
+
 authors = [
-  { name = "Anuroop V J", email = "anuroopvjneelambari@gmail.com" }
+  { name = "Anuroop V J", email = "anuroopvj@protonmail.com" }
 ]
+
 license = "MIT"
 license-files = ["LICENSE"]
-keywords = ["image-format", "encoder", "decoder", "gen5"]
+
+keywords = [
+  "ai-images",
+  "artifact-format",
+  "latent-tensors",
+  "image-generation",
+  "provenance",
+  "metadata",
+]
+
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Intended Audience :: Developers",
@@ -26,8 +37,10 @@ classifiers = [
   "Programming Language :: Python :: 3 :: Only",
   "Operating System :: OS Independent",
   "Topic :: Multimedia :: Graphics",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
   "Topic :: Software Development :: Libraries :: Python Modules",
 ]
+
 dependencies = [
   "click",
   "jsonschema",
@@ -35,7 +48,8 @@ dependencies = [
   "pillow",
   "pynvml",
   "torch",
-  "typing-extensions",  # prefer over bare 'typing' (which is stdlib)
+  "typing-extensions",
+  "zfpy",
   "zstandard",
 ]
 
@@ -49,9 +63,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://pypi.org/project/gen5/"
-Repository = "https://github.com/AnuroopVJ/gen5"
-Documentation = "https://github.com/AnuroopVJ/gen5/tree/master/all_docs/docs"
+Homepage = "https://pypi.org/project/raiiaf/"
+Repository = "https://github.com/AnuroopVJ/raiiaf"
+Documentation = "https://anuroopvj.github.io/raiiaf/"
 
 [tool.setuptools.packages.find]
 where = ["."]

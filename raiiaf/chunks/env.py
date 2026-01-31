@@ -1,7 +1,7 @@
 import numpy as np
 import sys
 import hashlib
-from gen5.core.exceptions import Gen5EnvChunkError
+from raiiaf.core.exceptions import Gen5EnvChunkError
 from dataclasses import dataclass, asdict
 from typing import List
 import torch

@@ -1,4 +1,4 @@
-from gen5 import Gen5FileHandler
+from raiiaf import Gen5FileHandler
 import torch
 import json
 import numpy as np
@@ -14,7 +14,7 @@ width = 64
 
 # Generate the initial noise tensor (often called z_T or x_T)
 initial_noise_tensor = torch.randn(batch_size, channels, height, width)
-binary_img_data = gen5.png_to_bytes(r"/workspaces/File_format_structure/example.png")
+binary_img_data = gen5.png_to_bytes("example.png")
 latent = {
     "initial_noise": initial_noise_tensor.detach().cpu().numpy()
 }
@@ -53,7 +53,7 @@ gen5.file_encoder(
 )
 print("Image Encoded Successfully...")
 decoded = gen5.file_decoder(
-    r"/workspaces/File_format_structure/converted_img.gen5"
+    "converted_img.gen5"
 )
 
 

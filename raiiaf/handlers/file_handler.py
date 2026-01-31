@@ -242,7 +242,12 @@ class Gen5FileHandler():
                     if compressed:
                         print("decoded raw_chunk len:", len(raw_chunk))
                         print("expected total bytes:", np.prod(shape))
-                        latent_array = self.latent.latent_parser(raw_chunk, shape, True)
+                        chunk_obj = {
+                            "chunk": raw_chunk,
+                            "len_header": record.get("len_header"),
+                            "len_data": record.get("len_data"),
+                        }
+                        latent_array = self.latent.latent_parser(chunk_obj, shape, True)
                     else:
                         latent_array = self.latent.latent_parser(raw_chunk, shape, False)
 

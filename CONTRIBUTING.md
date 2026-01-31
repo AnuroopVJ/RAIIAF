@@ -1,4 +1,4 @@
-# Contributing to GEN5
+# Contributing to raiiaf
 
 Thank you for your interest in contributing! We welcome contributions in the form of bug fixes, new features, tests, and documentation improvements.
 
@@ -7,8 +7,8 @@ Thank you for your interest in contributing! We welcome contributions in the for
 1. **Fork the repository** and clone it locally:
 
    ```bash
-   git clone https://github.com/<your-username>/gen5.git
-   cd gen5
+   git clone https://github.com/<your-username>/raiiaf.git
+   cd raiiaf
    ```
 2. **Create a branch** for your changes:
 
@@ -18,7 +18,7 @@ Thank you for your interest in contributing! We welcome contributions in the for
 3. **Install dependencies**:
 
    ```bash
-   pip install -r gen5/requirements.txt
+   pip install -r raiiaf/requirements.txt
    pip install -r dev-requirements.txt
    ```
 4. **Run tests** to make sure everything works:

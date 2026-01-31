@@ -1,12 +1,12 @@
-gen5.chunks.image
+raiiaf.chunks.image
 =================
 
-.. automodule:: gen5.chunks.image
+.. automodule:: raiiaf.chunks.image
 
    
    .. rubric:: Classes
 
    .. autosummary::
    
-      Gen5Image
+      raiiafImage
    

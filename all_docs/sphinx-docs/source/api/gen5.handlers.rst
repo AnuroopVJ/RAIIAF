@@ -1,7 +1,7 @@
-gen5.handlers
+raiiaf.handlers
 =============
 
-.. automodule:: gen5.handlers
+.. automodule:: raiiaf.handlers
 
    
 .. rubric:: Modules

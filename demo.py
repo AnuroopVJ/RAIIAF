@@ -1,11 +1,11 @@
-from raiiaf import Gen5FileHandler
+from raiiaf import raiiafFileHandler
 import torch
 import json
 import numpy as np
 import io
 from PIL import Image
 
-gen5 = Gen5FileHandler()
+raiiaf = raiiafFileHandler()
 
 batch_size = 1
 channels = 3  # For RGB images
@@ -14,13 +14,13 @@ width = 64
 
 # Generate the initial noise tensor (often called z_T or x_T)
 initial_noise_tensor = torch.randn(batch_size, channels, height, width)
-binary_img_data = gen5.png_to_bytes("example.png")
+binary_img_data = raiiaf.png_to_bytes("example.png")
 latent = {
     "initial_noise": initial_noise_tensor.detach().cpu().numpy()
 }
-gen5.file_encoder(
+raiiaf.file_encoder(
     should_compress=False,
-    filename="converted_img.gen5",
+    filename="converted_img.raiiaf",
     latent=latent,
     chunk_records=[],
     model_name="Stable Diffusion 3",
@@ -52,8 +52,8 @@ gen5.file_encoder(
     }
 )
 print("Image Encoded Successfully...")
-decoded = gen5.file_decoder(
-    "converted_img.gen5"
+decoded = raiiaf.file_decoder(
+    "converted_img.raiiaf"
 )
 
 

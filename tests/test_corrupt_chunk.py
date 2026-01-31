@@ -7,15 +7,15 @@ import pytest
 import json.decoder
 import zstandard as zstd
 import copy
-from raiiaf import Gen5FileHandler
-from raiiaf.core.exceptions import Gen5CorruptHeader, Gen5MetadataError, Gen5ImageError, Gen5ChunkError
-from raiiaf.chunks.metadata import Gen5Metadata
+from raiiaf import raiiafFileHandler
+from raiiaf.core.exceptions import raiiafCorruptHeader, raiiafMetadataError, raiiafImageError, raiiafChunkError
+from raiiaf.chunks.metadata import raiiafMetadata
 from raiiaf.core.header import header_parse
 from PIL import Image
 import io
 
 
-gen5 = Gen5FileHandler()
+raiiaf = raiiafFileHandler()
 def create_test_image():
     img = Image.new("RGBA", (64, 64), color=(255, 0, 0, 255))  #justa  red square
     buf = io.BytesIO()
@@ -24,13 +24,13 @@ def create_test_image():
 
 def test_corrupt_chunk():
     img_bytes = create_test_image()
-    with tempfile.NamedTemporaryFile(suffix=".gen5", delete=False) as tmp_file:
+    with tempfile.NamedTemporaryFile(suffix=".raiiaf", delete=False) as tmp_file:
         filename = tmp_file.name
         latent = {
             "latent_1": torch.randn(1, 4, 64, 64, dtype=torch.float32).numpy()
         }
         chunk_records = []
-        gen5.file_encoder(
+        raiiaf.file_encoder(
     filename=filename,
     latent=latent,
     chunk_records=chunk_records,
@@ -65,8 +65,8 @@ def test_corrupt_chunk():
 
         # Corrupt chunk
         with open(filename, "r+b") as f:
-            f.seek(gen5.HEADER_SIZE)
+            f.seek(raiiaf.HEADER_SIZE)
             f.write(b"\x00\x01\x02")
 
-        with pytest.raises(Gen5ChunkError):
-            gen5.file_decoder(filename)
+        with pytest.raises(raiiafChunkError):
+            raiiaf.file_decoder(filename)

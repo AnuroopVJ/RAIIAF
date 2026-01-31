@@ -7,13 +7,13 @@ import pytest
 import json.decoder
 import zstandard as zstd
 import copy
-from raiiaf import Gen5FileHandler
-from raiiaf.core.exceptions import Gen5CorruptHeader, Gen5MetadataError, Gen5ImageError, Gen5ChunkError
-from raiiaf.chunks.metadata import Gen5Metadata
+from raiiaf import raiiafFileHandler
+from raiiaf.core.exceptions import raiiafCorruptHeader, raiiafMetadataError, raiiafImageError, raiiafChunkError
+from raiiaf.chunks.metadata import raiiafMetadata
 from raiiaf.core.header import header_parse
 from PIL import Image
 import io
-gen5 = Gen5FileHandler()
+raiiaf = raiiafFileHandler()
 
 def create_test_image():
     # Create a small deterministic RGB or RGBA image
@@ -34,11 +34,11 @@ def test_file_encode_decode():
     chunk_records = []
     img_bytes = create_test_image()
 
-    with tempfile.NamedTemporaryFile(suffix=".gen5", delete=False) as tmp_file:
+    with tempfile.NamedTemporaryFile(suffix=".raiiaf", delete=False) as tmp_file:
         filename = tmp_file.name
 
     try:
-        gen5.file_encoder(
+        raiiaf.file_encoder(
     filename=filename,
     latent=initial_noise_latent,
     chunk_records=chunk_records,
@@ -70,18 +70,18 @@ def test_file_encode_decode():
         "compute_lib": "cuda"
     }
 )
-        decoded = gen5.file_decoder(filename)
+        decoded = raiiaf.file_decoder(filename)
 
         
         header = decoded["header"]
-        assert header["magic"] == b"GEN5"
+        assert header["magic"] == b"raiiaf"
         assert header["version_major"] == 1
 
 
         decoded_latent = decoded["chunks"]["latent"][0]
         np.testing.assert_array_equal(decoded_latent, initial_noise_latent["latent_1"])
         assert decoded["chunks"]["image"] == img_bytes
-        metadata = decoded["metadata"]["gen5_metadata"]["model_info"]
+        metadata = decoded["metadata"]["raiiaf_metadata"]["model_info"]
         assert metadata["model_name"] == "TestModel"
         assert metadata["prompt"] == "Test prompt"
 

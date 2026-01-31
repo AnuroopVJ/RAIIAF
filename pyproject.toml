@@ -69,7 +69,7 @@ Documentation = "https://anuroopvj.github.io/raiiaf/"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["gen5*"]
+include = ["raiiaf*"]
 
 [tool.pytest.ini_options]
 minversion = "7.0"
@@ -90,7 +90,7 @@ warn_unused_configs = true
 
 [tool.coverage.run]
 branch = true
-source = ["gen5"]
+source = ["raiiaf"]
 
 [tool.coverage.report]
 show_missing = true

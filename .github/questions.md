@@ -1,6 +1,6 @@
 ---
 name: Question / Support
-about: Ask a question or request help with GEN5
+about: Ask a question or request help with raiiaf
 title: "[QUESTION]"
 labels: question
 assignees: ''
@@ -10,7 +10,7 @@ assignees: ''
 Describe your question or the help you need.
 
 **Context**
-Provide context: OS, Python version, GEN5 version, code snippets, or error messages.
+Provide context: OS, Python version, raiiaf version, code snippets, or error messages.
 
 **Additional information**
 Any other details that may help us answer your question.

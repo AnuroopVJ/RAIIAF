@@ -1,12 +1,12 @@
-gen5.chunks.latent
+raiiaf.chunks.latent
 ==================
 
-.. automodule:: gen5.chunks.latent
+.. automodule:: raiiaf.chunks.latent
 
    
    .. rubric:: Classes
 
    .. autosummary::
    
-      Gen5Latent
+      raiiafLatent
    

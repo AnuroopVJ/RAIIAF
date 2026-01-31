@@ -1,6 +1,6 @@
-gen5.core.constants
+raiiaf.core.constants
 ===================
 
-.. automodule:: gen5.core.constants
+.. automodule:: raiiaf.core.constants
 
    

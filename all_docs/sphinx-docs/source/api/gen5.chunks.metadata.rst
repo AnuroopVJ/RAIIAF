@@ -1,12 +1,12 @@
-gen5.chunks.metadata
+raiiaf.chunks.metadata
 ====================
 
-.. automodule:: gen5.chunks.metadata
+.. automodule:: raiiaf.chunks.metadata
 
    
    .. rubric:: Classes
 
    .. autosummary::
    
-      Gen5Metadata
+      raiiafMetadata
    

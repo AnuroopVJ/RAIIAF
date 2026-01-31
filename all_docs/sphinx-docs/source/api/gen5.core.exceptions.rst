@@ -1,18 +1,18 @@
-gen5.core.exceptions
+raiiaf.core.exceptions
 ====================
 
-.. automodule:: gen5.core.exceptions
+.. automodule:: raiiaf.core.exceptions
 
    
    .. rubric:: Exceptions
 
    .. autosummary::
    
-      Gen5ChunkError
-      Gen5CorruptHeader
-      Gen5DecodeError
-      Gen5EnvChunkError
-      Gen5ImageError
-      Gen5LatentError
-      Gen5MetadataError
+      raiiafChunkError
+      raiiafCorruptHeader
+      raiiafDecodeError
+      raiiafEnvChunkError
+      raiiafImageError
+      raiiafLatentError
+      raiiafMetadataError
    

@@ -1,7 +1,7 @@
-gen5.core
+raiiaf.core
 =========
 
-.. automodule:: gen5.core
+.. automodule:: raiiaf.core
 
    
 .. rubric:: Modules

@@ -1,7 +1,7 @@
-gen5.chunks.env
+raiiaf.chunks.env
 ===============
 
-.. automodule:: gen5.chunks.env
+.. automodule:: raiiaf.chunks.env
 
    
    .. rubric:: Classes
@@ -10,5 +10,5 @@ gen5.chunks.env
    
       EnvChunk
       EnvComponent
-      Gen5Env
+      raiiafEnv
    

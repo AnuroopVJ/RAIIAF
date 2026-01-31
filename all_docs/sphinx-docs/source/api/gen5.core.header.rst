@@ -1,7 +1,7 @@
-gen5.core.header
+raiiaf.core.header
 ================
 
-.. automodule:: gen5.core.header
+.. automodule:: raiiaf.core.header
 
    
    .. rubric:: Functions

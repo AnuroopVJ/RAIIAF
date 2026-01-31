@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Report a problem or error in GEN5
+about: Report a problem or error in raiiaf
 title: "[BUG]"
 labels: bug
 assignees: ''
@@ -21,7 +21,7 @@ What did you expect to happen?
 **Environment:**
 - OS: [e.g., Ubuntu 22.04, Windows 11]
 - Python version: [e.g., 3.10]
-- GEN5 version: [e.g., 0.1.0a]
+- raiiaf version: [e.g., 0.1.0a]
 - Other relevant packages/dependencies:
 
 **Additional context**

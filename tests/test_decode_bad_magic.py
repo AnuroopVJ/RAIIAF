@@ -7,15 +7,15 @@ import pytest
 import json.decoder
 import zstandard as zstd
 import copy
-from raiiaf import Gen5FileHandler
-from raiiaf.core.exceptions import Gen5CorruptHeader, Gen5MetadataError, Gen5ImageError, Gen5ChunkError
-from raiiaf.chunks.metadata import Gen5Metadata
+from raiiaf import raiiafFileHandler
+from raiiaf.core.exceptions import raiiafCorruptHeader, raiiafMetadataError, raiiafImageError, raiiafChunkError
+from raiiaf.chunks.metadata import raiiafMetadata
 from raiiaf.core.header import header_parse
 from PIL import Image
 import io
 
 
-gen5 = Gen5FileHandler()
+raiiaf = raiiafFileHandler()
 
 def create_test_image():
     img = Image.new("RGBA", (64, 64), color=(255, 0, 0, 255))  #justa  red square
@@ -25,7 +25,7 @@ def create_test_image():
 
 def test_decoder_bad_magic(tmp_path: Path):
 
-    filename = tmp_path / "test.gen5"
+    filename = tmp_path / "test.raiiaf"
     batch_size = 1
     channels = 4
     height = 64
@@ -35,7 +35,7 @@ def test_decoder_bad_magic(tmp_path: Path):
     }
     chunk_records = []
     img_bytes = create_test_image()
-    gen5.file_encoder(
+    raiiaf.file_encoder(
         filename=str(filename),
         latent=initial_noise_latent,
         chunk_records=chunk_records,
@@ -73,5 +73,5 @@ def test_decoder_bad_magic(tmp_path: Path):
     with open(filename, "r+b") as f:
         f.write(b"XXXX")
 
-    with pytest.raises(Gen5CorruptHeader):
-        gen5.file_decoder(str(filename))
+    with pytest.raises(raiiafCorruptHeader):
+        raiiaf.file_decoder(str(filename))

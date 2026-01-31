@@ -1,17 +1,43 @@
-import struct
+"""Core constants and schema for RAIIAF.
 
 MAX_FILE_SIZE = 10 * 1024 * 1024 * 1024  # 10 gb default
 MAX_CHUNK_SIZE = 2 * 1024 * 1024 * 1024  #2 gb per chunk
 MAX_CHUNKS = 1000
-HEADER_FORMAT = '<4s B B H I I I I Q'  #uses little endian
+# Header format:
+#  - magic: 6s (6-byte ASCII "raiiaf")
+#  - version_major: B (1 byte)
+#  - version_minor: B (1 byte)
+#  - flags: B (1 byte)
+#  - chunk_table_offset: I (4 bytes)
+#  - chunk_table_size: I (4 bytes)
+#  - chunk_count: I (4 bytes)
+#  - file_size: Q (8 bytes)
+#  - reserved: I (4 bytes)
+HEADER_FORMAT = "<6sBBBIIIQI"
+
+# Header format (see raiiaf.core.header for helpers):
+#  - magic: 6s (6-byte ASCII "raiiaf")
+#  - version_major: B (1 byte)
+#  - version_minor: B (1 byte)
+#  - flags: B (1 byte)
+#  - chunk_table_offset: I (4 bytes)
+#  - chunk_table_size: I (4 bytes)
+#  - chunk_count: I (4 bytes)
+#  - file_size: I (4 bytes)
+#  - reserved: I (4 bytes)
+"""
+
+HEADER_FORMAT = "<6sBBBIIIII"
 HEADER_SIZE = struct.calcsize(HEADER_FORMAT)
+
+# JSON schema for the metadata chunk
 JSON_SCHEMA = """{
 "$schema": "http://json-schema.org/draft-07/schema#",
-"title": "GEN5 Metadata Schema",
+"title": "RAIIAF Metadata Schema",
 "type": "object",
 
 "properties": {
-"gen5_metadata": {
+"raiiaf_metadata": {
     "type": "object",
 
     "properties": {
@@ -19,7 +45,7 @@ JSON_SCHEMA = """{
     "file_info": {
         "type": "object",
         "properties": {
-        "magic":          { "type": "string", "const": "GEN5" },
+        "magic":          { "type": "string", "const": "raiiaf" },
         "version_major":  { "type": "integer", "minimum": 1 },
         "version_minor":  { "type": "integer", "minimum": 0 },
         "file_size":      { "type": "integer", "minimum": 0 },
@@ -135,6 +161,5 @@ JSON_SCHEMA = """{
 }
 },
 
-"required": ["gen5_metadata"]
+"required": ["raiiaf_metadata"]
 }
-"""

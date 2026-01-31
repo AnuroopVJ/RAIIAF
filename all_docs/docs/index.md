@@ -1,13 +1,13 @@
-# Welcome to Gen5 File Format Documentation
+# Welcome to raiiaf File Format Documentation
 
-For the source code visit [github](https://github.com/AnuroopVJ/gen5)
+For the source code visit [github](https://github.com/AnuroopVJ/raiiaf)
 
 ## Overview
 
-Gen5 is a binary container format aimed at increased reproducibility for AI-generated images. It enables the storage of several key pieces of information, such as :
+raiiaf is a binary container format aimed at increased reproducibility for AI-generated images. It enables the storage of several key pieces of information, such as :
 
 ## 1. Environment & Provenance Tracking
-The GEN5 file format has a dedicated chunk that captures Runtime Environment Details at the time of generation.
+The raiiaf file format has a dedicated chunk that captures Runtime Environment Details at the time of generation.
 This includes:
   - Operating System and Machine Identifiers
   - CPU/GPU models, core counts, and memory
@@ -15,7 +15,7 @@ This includes:
   - Driver and library versions (e.g., CUDA version, NVIDIA driver)
 This is further utilised to warn the user of environment mismatches.
   ### Environment Chunk (ENVC)
-  GEN5 includes an optional but strongly recommended environment chunk (ENVC) that captures a verifiable snapshot of the software stack used during generation. Unlike generic metadata, this chunk:
+  raiiaf includes an optional but strongly recommended environment chunk (ENVC) that captures a verifiable snapshot of the software stack used during generation. Unlike generic metadata, this chunk:
 
   Is structured as a list of canonicalized components (e.g., torch, python, cuda, gpu)
   Records each component’s name, version, and a SHA-256 digest of its canonical string
@@ -34,14 +34,14 @@ This is further utilised to warn the user of environment mismatches.
   ```
 
 ## 2. Latent Tensor Storage
-GEN5 natively supports the storing of latent representations (ie, diffusion model latents, VAE encodings) alongside the generated images. These are serialized as one or more 'LATN' chunks.
+raiiaf natively supports the storing of latent representations (ie, diffusion model latents, VAE encodings) alongside the generated images. These are serialized as one or more 'LATN' chunks.
 These are stored in their native memory layout (as provided by the user). For PyTorch-generated latents, this is typically NCHW. And for TensorFlow, it is going to be NHWC. The format does not enforce or convert layout, insted it preserves the exact shape and byte representation as provided by the user.
 
   HOW TO STORE?
   Example:
   ```python
-  gen5.file_encoder(
-    filename="my_ai_art.gen5",
+  raiiaf.file_encoder(
+    filename="my_ai_art.raiiaf",
     latent={
         "initial_noise": initial_noise.numpy(),
         "final_latent": final_latent.numpy()
@@ -102,16 +102,16 @@ This has proven to be capable of producing extremely similar images. Although we
 ## Installation
 Just pip install the package!
 ```bash
-pip install gen5
+pip install raiiaf
 ```
 ## Usage
 import the classes
 ```python
-from gen5.main import Gen5FileHandler
+from raiiaf.main import raiiafFileHandler
 ```
-First you need to instantiate the Gen5FileHandler class.
+First you need to instantiate the raiiafFileHandler class.
 ```python
-gen5 = Gen5FileHandler()
+raiiaf = raiiafFileHandler()
 ```
 
 # Encoding
@@ -121,17 +121,17 @@ gen5 = Gen5FileHandler()
     If you use PyTorch tensors, convert them with `.detach().cpu().numpy()`.
 
 ```python
-from gen5.main import Gen5FileHandler
+from raiiaf.main import raiiafFileHandler
 
-gen5 = Gen5FileHandler()
+raiiaf = raiiafFileHandler()
 initial_noise_tensor = torch.randn(batch_size, channels, height, width)
 latent = {
     "initial_noise": initial_noise_tensor.detach().cpu().numpy() #The encoder expects numpy array not a torch tensor object
 }
-binary_img_data = gen5.png_to_bytes(r'path/to/image.png') # use the helper function to convert image to bytes
+binary_img_data = raiiaf.png_to_bytes(r'path/to/image.png') # use the helper function to convert image to bytes
 
-gen5.file_encoder(
-    filename="encoded_img.gen5", # The .gen5 extension is required!
+raiiaf.file_encoder(
+    filename="encoded_img.raiiaf", # The .raiiaf extension is required!
     latent=latent,# initial latent noise
     chunk_records=[],
     model_name="Stable Diffusion 3",
@@ -166,12 +166,12 @@ gen5.file_encoder(
 
 # Decoding
 ```python
-decoded = gen5.file_decoder(filename)
+decoded = raiiaf.file_decoder(filename)
 # now to save the metadata
-metadata = decoded["metadata"]["gen5_metadata"]
+metadata = decoded["metadata"]["raiiaf_metadata"]
 
 # to just get specific metadata blocks
-model_info = decoded["metadata"]["gen5_metadata"]["model_info"]
+model_info = decoded["metadata"]["raiiaf_metadata"]["model_info"]
 
 # to save decoded metadata to a json file
 with open("decoded_metadata.json", "w") as f:
@@ -186,13 +186,13 @@ if image_bytes is not None:
 
 ## Examples
 ```python
-from gen5.main import Gen5FileHandler
+from raiiaf.main import raiiafFileHandler
 import torch
 import json
 import numpy as np
 import io
 from PIL import Image
-gen5 = Gen5FileHandler()
+raiiaf = raiiafFileHandler()
 
 batch_size = 1
 channels = 3  # For RGB images
@@ -201,12 +201,12 @@ width = 64
 
 # Generate the initial noise tensor (often called z_T or x_T)
 initial_noise_tensor = torch.randn(batch_size, channels, height, width)
-binary_img_data = gen5.png_to_bytes(r"C:\Users\neela\Desktop\Miscellaneous\image file format - .gen5\gen5\src\gen5\example.png")
+binary_img_data = raiiaf.png_to_bytes(r"C:\Users\neela\Desktop\Miscellaneous\image file format - .raiiaf\raiiaf\src\raiiaf\example.png")
 latent = {
     "initial_noise": initial_noise_tensor.detach().cpu().numpy() # The encoder expects numpy array not a torch tensor object
 }
-gen5.file_encoder(
-    filename="converted_img.gen5",
+raiiaf.file_encoder(
+    filename="converted_img.raiiaf",
     latent=latent,
     chunk_records=[],
     model_name="Stable Diffusion 3",
@@ -238,8 +238,8 @@ gen5.file_encoder(
     }
 )
 print("Image Encoded Successfully...")
-decoded = gen5.file_decoder(
-    r"path/to/decoded.gen5"
+decoded = raiiaf.file_decoder(
+    r"path/to/decoded.raiiaf"
 )
 
 with open("decoded_metadata.json", "w") as f:
@@ -260,9 +260,9 @@ if image_bytes is not None:
 Expected decoded metadata json:
 ```json
 {
-  "gen5_metadata": {
+  "raiiaf_metadata": {
     "file_info": {
-      "magic": "GEN5",
+      "magic": "raiiaf",
       "version_major": 1,
       "version_minor": 0,
       "file_size": 67786,

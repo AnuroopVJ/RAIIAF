@@ -1,7 +1,7 @@
-gen5.chunks
+raiiaf.chunks
 ===========
 
-.. automodule:: gen5.chunks
+.. automodule:: raiiaf.chunks
 
    
 .. rubric:: Modules

@@ -28,14 +28,14 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('gen5/requirements.txt') }}
+          key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('raiiaf/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-${{ matrix.python-version }}-
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r gen5/requirements.txt
+          pip install -r raiiaf/requirements.txt
           pip install -e .
           if [ -f dev-requirements.txt ]; then pip install -r dev-requirements.txt; fi
 

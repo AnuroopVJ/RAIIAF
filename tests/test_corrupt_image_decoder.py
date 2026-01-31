@@ -7,15 +7,15 @@ import pytest
 import json.decoder
 import zstandard as zstd
 import copy
-from raiiaf import Gen5FileHandler
-from raiiaf.core.exceptions import Gen5CorruptHeader, Gen5MetadataError, Gen5ImageError, Gen5ChunkError
-from raiiaf.chunks.metadata import Gen5Metadata
+from raiiaf import raiiafFileHandler
+from raiiaf.core.exceptions import raiiafCorruptHeader, raiiafMetadataError, raiiafImageError, raiiafChunkError
+from raiiaf.chunks.metadata import raiiafMetadata
 from raiiaf.core.header import header_parse
 from PIL import Image
 import io
 
 
-gen5 = Gen5FileHandler()
+raiiaf = raiiafFileHandler()
 def create_test_image():
     img = Image.new("RGBA", (64, 64), color=(255, 0, 0, 255))  #justa  red square
     buf = io.BytesIO()
@@ -29,10 +29,10 @@ def test_corrupt_image_decoder():
     }
     chunk_records = []
 
-    with tempfile.NamedTemporaryFile(suffix=".gen5", delete=False) as tmp_file:
+    with tempfile.NamedTemporaryFile(suffix=".raiiaf", delete=False) as tmp_file:
         filename = tmp_file.name
 
-    result = gen5.file_encoder(
+    result = raiiaf.file_encoder(
     filename=filename,
     latent=latent,
     chunk_records=chunk_records,
@@ -64,13 +64,13 @@ def test_corrupt_image_decoder():
         "compute_lib": "cuda"
     }
 )
-    metadata = Gen5Metadata().metadata_parser(result["metadata_chunk"])
+    metadata = raiiafMetadata().metadata_parser(result["metadata_chunk"])
     with open(filename, "r+b") as f:
-        for rec in metadata["gen5_metadata"]["chunks"]:
+        for rec in metadata["raiiaf_metadata"]["chunks"]:
             if rec["type"] == "DATA":          #image chunk
                 f.seek(rec["offset"])
                 f.write(b"\xFF" * rec["compressed_size"])
                 break
 
-    with pytest.raises(Gen5ImageError):
-        gen5.file_decoder(filename)
+    with pytest.raises(raiiafImageError):
+        raiiaf.file_decoder(filename)

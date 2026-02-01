@@ -1,5 +1,3 @@
-"""Core constants and schema for RAIIAF.
-
 MAX_FILE_SIZE = 10 * 1024 * 1024 * 1024  # 10 gb default
 MAX_CHUNK_SIZE = 2 * 1024 * 1024 * 1024  #2 gb per chunk
 MAX_CHUNKS = 1000
@@ -14,20 +12,6 @@ MAX_CHUNKS = 1000
 #  - file_size: Q (8 bytes)
 #  - reserved: I (4 bytes)
 HEADER_FORMAT = "<6sBBBIIIQI"
-
-# Header format (see raiiaf.core.header for helpers):
-#  - magic: 6s (6-byte ASCII "raiiaf")
-#  - version_major: B (1 byte)
-#  - version_minor: B (1 byte)
-#  - flags: B (1 byte)
-#  - chunk_table_offset: I (4 bytes)
-#  - chunk_table_size: I (4 bytes)
-#  - chunk_count: I (4 bytes)
-#  - file_size: I (4 bytes)
-#  - reserved: I (4 bytes)
-"""
-
-HEADER_FORMAT = "<6sBBBIIIII"
 HEADER_SIZE = struct.calcsize(HEADER_FORMAT)
 
 # JSON schema for the metadata chunk
@@ -162,4 +146,4 @@ JSON_SCHEMA = """{
 },
 
 "required": ["raiiaf_metadata"]
-}
+}"""

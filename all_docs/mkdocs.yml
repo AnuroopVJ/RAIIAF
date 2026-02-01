@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 site_name: raiiaf File Format Documentation
+=======
+site_name: RAIIAF Binary Container Format Documentation
+>>>>>>> 59e07a4cc6f4af6606c7a081077a79dd15b2bc45
 site_url: https://mydomain.org/mysite
 theme:
   name: material

@@ -4,7 +4,7 @@
 .devcontainer
 __pycache__
 example.png
-
+.venv
 #egg
 *.egg-info
 #dist dir

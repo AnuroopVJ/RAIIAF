@@ -1,0 +1,15 @@
+raiiaf.core
+=========
+
+.. automodule:: raiiaf.core
+
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   constants
+   exceptions
+   header

@@ -1,6 +1,0 @@
-raiiaf.core.constants
-===================
-
-.. automodule:: raiiaf.core.constants
-
-   

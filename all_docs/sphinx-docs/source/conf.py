@@ -5,7 +5,6 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-
 import os
 import sys
 
@@ -48,6 +47,6 @@ exclude_patterns = []
 html_theme = 'alabaster'
 html_static_path = ['_static']
 
-# Ensure Python can import the 'gen5' package
-# Adjust the path to point to where your package is located
+# Ensure Python can import the 'raiiaf' package. This should point to the directory
+# that contains the 'raiiaf' package folder (i.e., src/raiiaf), not to the package itself.
 sys.path.insert(0, os.path.abspath('../../../../'))

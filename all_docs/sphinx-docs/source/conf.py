@@ -8,12 +8,8 @@
 
 import os
 import sys
-<<<<<<< HEAD
-project = 'raiiaf'
-=======
 
 project = 'RAIIAF'
->>>>>>> 59e07a4cc6f4af6606c7a081077a79dd15b2bc45
 copyright = '2026, Anuroop V J'
 author = 'Anuroop V J'
 release = '1.0.0'
@@ -51,13 +47,7 @@ exclude_patterns = []
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
-<<<<<<< HEAD
-# Ensure Python can import the 'raiiaf' package. This should point to the directory
-# that contains the 'raiiaf' package folder (i.e., src/raiiaf), not to the package itself.
-sys.path.insert(0, os.path.abspath('../../../../'))
-=======
 
 # Ensure Python can import the 'gen5' package
 # Adjust the path to point to where your package is located
 sys.path.insert(0, os.path.abspath('../../../../'))
->>>>>>> 59e07a4cc6f4af6606c7a081077a79dd15b2bc45

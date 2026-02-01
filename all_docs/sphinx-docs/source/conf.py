@@ -7,10 +7,10 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 import os
 import sys
-project = 'Gen5'
+project = 'RAIIAF'
 copyright = '2026, Anuroop V J'
 author = 'Anuroop V J'
-release = '0.1.0'
+release = '1.0.0'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

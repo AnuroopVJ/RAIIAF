@@ -1,3 +1,4 @@
+import struct
 MAX_FILE_SIZE = 10 * 1024 * 1024 * 1024  # 10 gb default
 MAX_CHUNK_SIZE = 2 * 1024 * 1024 * 1024  #2 gb per chunk
 MAX_CHUNKS = 1000

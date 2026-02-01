@@ -1,4 +1,4 @@
-# .raiiaf - AI-native Context Storage
+# .raiiaf - Rich AI Image Artifact Format
 
 ![bannerimage](raiiaf_img.png)
 [![Build and Deploy Docs](https://github.com/AnuroopVJ/RAIIAF/actions/workflows/docs.yml/badge.svg)](https://github.com/AnuroopVJ/RAIIAF/actions/workflows/docs.yml)
@@ -177,7 +177,7 @@ MIT
 # Contribution
 Please refer to the CONTRIBUTING.md filein the repo
 # Documentation
-Full docs: https://anuroopvj.github.io/raiiaf
+Full docs: https://anuroopvj.github.io/RAIIAF
 
 # Future improvements
 - Supporting other frameworks and utilities in the EnvChunk

@@ -5,8 +5,10 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+
 import os
 import sys
+
 project = 'RAIIAF'
 copyright = '2026, Anuroop V J'
 author = 'Anuroop V J'
@@ -40,13 +42,12 @@ napoleon_numpy_docstring = True
 templates_path = ['_templates']
 exclude_patterns = []
 
-
-
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'alabaster'
 html_static_path = ['_static']
-# Ensure Python can import the 'gen5' package. This should point to the directory
-# that contains the 'gen5' package folder (i.e., src/gen5), not to the package itself.
+
+# Ensure Python can import the 'gen5' package
+# Adjust the path to point to where your package is located
 sys.path.insert(0, os.path.abspath('../../../../'))

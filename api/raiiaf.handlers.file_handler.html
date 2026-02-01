@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>raiiaf.handlers.file_handler &#8212; RAIIAF 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="raiiaf.handlers" href="raiiaf.handlers.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-raiiaf.handlers.file_handler">
+<span id="raiiaf-handlers-file-handler"></span><h1>raiiaf.handlers.file_handler<a class="headerlink" href="#module-raiiaf.handlers.file_handler" title="Link to this heading">¶</a></h1>
+<p>RAIIAF file handler for encoding and decoding .raiiaf artifacts.</p>
+<p>This module orchestrates packing/unpacking of latent, image, environment, and metadata
+chunks, builds the header, and provides a high-level API for reading and writing
+RAIIAF files.</p>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#raiiaf.handlers.file_handler.raiiafFileHandler" title="raiiaf.handlers.file_handler.raiiafFileHandler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raiiafFileHandler</span></code></a>([max_file_size, ...])</p></td>
+<td><p>High-level API for reading and writing RAIIAF files.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="raiiaf.handlers.file_handler.raiiafFileHandler">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">raiiaf.handlers.file_handler.</span></span><span class="sig-name descname"><span class="pre">raiiafFileHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_file_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_chunk_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.handlers.file_handler.raiiafFileHandler" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>High-level API for reading and writing RAIIAF files.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.handlers.file_handler.raiiafFileHandler.bytes_to_png">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">bytes_to_png</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_bytes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Image</span></span></span><a class="reference internal" href="../_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler.bytes_to_png"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.handlers.file_handler.raiiafFileHandler.bytes_to_png" title="Link to this definition">¶</a></dt>
+<dd><p>Convert PNG bytes to a PIL Image.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>img_bytes</strong> (<em>bytes</em>) – PNG image bytes.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Loaded image instance.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>PIL.Image.Image</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafImageError" title="raiiaf.core.exceptions.raiiafImageError"><strong>raiiafImageError</strong></a> – If the bytes cannot be decoded as an image.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.handlers.file_handler.raiiafFileHandler.file_decoder">
+<span class="sig-name descname"><span class="pre">file_decoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler.file_decoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.handlers.file_handler.raiiafFileHandler.file_decoder" title="Link to this definition">¶</a></dt>
+<dd><p>Decode a RAIIAF file.</p>
+<p>Reads the header, chunk table (metadata), and iteratively decodes the
+latent, image, and environment chunks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – Path to the input .raiiaf file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A dictionary with keys:</dt><dd><ul class="simple">
+<li><p>header (dict): Parsed header fields.</p></li>
+<li><p>chunks (dict): Parsed chunks: ‘latent’ (list), ‘image’ (bytes), ‘env’ (EnvChunk).</p></li>
+<li><p>metadata (dict): Parsed metadata manifest.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafCorruptHeader" title="raiiaf.core.exceptions.raiiafCorruptHeader"><strong>raiiafCorruptHeader</strong></a> – If the header fails validation.</p></li>
+<li><p><a class="reference internal" href="raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafChunkError" title="raiiaf.core.exceptions.raiiafChunkError"><strong>raiiafChunkError</strong></a> – If a chunk is truncated or corrupt.</p></li>
+<li><p><a class="reference internal" href="raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafEnvChunkError" title="raiiaf.core.exceptions.raiiafEnvChunkError"><strong>raiiafEnvChunkError</strong></a> – If the environment chunk cannot be parsed when uncompressed.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.handlers.file_handler.raiiafFileHandler.file_encoder">
+<span class="sig-name descname"><span class="pre">file_encoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_records</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_binary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">should_compress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_float16</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_settings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hardware_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler.file_encoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.handlers.file_handler.raiiafFileHandler.file_encoder" title="Link to this definition">¶</a></dt>
+<dd><p>Encode a RAIIAF file.</p>
+<p>Orchestrates packing latent, image, environment, and metadata chunks, builds
+the header, and writes the final file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – Output .raiiaf filename. The .raiiaf extension is required.</p></li>
+<li><p><strong>latent</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>np.ndarray</em><em>]</em>) – Mapping of latent keys to arrays.</p></li>
+<li><p><strong>chunk_records</strong> (<em>list</em>) – Mutable list that will be appended with chunk records.</p></li>
+<li><p><strong>model_name</strong> (<em>str</em>) – Name of the model.</p></li>
+<li><p><strong>model_version</strong> (<em>str</em>) – Version of the model.</p></li>
+<li><p><strong>prompt</strong> (<em>str</em>) – Prompt used for generation.</p></li>
+<li><p><strong>tags</strong> (<em>list</em>) – Tags associated with the generation.</p></li>
+<li><p><strong>img_binary</strong> (<em>bytes</em>) – PNG image bytes to embed.</p></li>
+<li><p><strong>should_compress</strong> (<em>bool</em>) – Whether to compress chunks. Defaults to True.</p></li>
+<li><p><strong>convert_float16</strong> (<em>bool</em>) – Convert latents to float16 for storage. Defaults to True.</p></li>
+<li><p><strong>generation_settings</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) – Generation configuration to include in metadata.</p></li>
+<li><p><strong>hardware_info</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) – Hardware information to include in metadata.</p></li>
+<li><p><strong>extra_image</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – Extra fields for the image chunk record.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A dictionary containing header bytes and chunk bytes with keys:</dt><dd><ul class="simple">
+<li><p>header (bytes)</p></li>
+<li><p>latent_chunks (bytes)</p></li>
+<li><p>metadata_chunk (bytes)</p></li>
+<li><p>image_chunk (Optional[bytes])</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.handlers.file_handler.raiiafFileHandler.png_to_bytes">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">png_to_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">png_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="reference internal" href="../_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler.png_to_bytes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.handlers.file_handler.raiiafFileHandler.png_to_bytes" title="Link to this definition">¶</a></dt>
+<dd><p>Convert a PNG image to bytes.</p>
+<p>Preserves transparency by converting to RGBA.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>png_path</strong> (<em>str</em>) – Path to the PNG image.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>PNG image data in bytes.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafImageError" title="raiiaf.core.exceptions.raiiafImageError"><strong>raiiafImageError</strong></a> – If the image cannot be read or encoded.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.handlers.file_handler.raiiafFileHandler.validate_chunk_count">
+<span class="sig-name descname"><span class="pre">validate_chunk_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler.validate_chunk_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.handlers.file_handler.raiiafFileHandler.validate_chunk_count" title="Link to this definition">¶</a></dt>
+<dd><p>Validate the number of chunks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>count</strong> (<em>int</em>) – Number of chunks.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the count is within limits.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafDecodeError" title="raiiaf.core.exceptions.raiiafDecodeError"><strong>raiiafDecodeError</strong></a> – If count exceeds configured limits.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.handlers.file_handler.raiiafFileHandler.validate_file_size">
+<span class="sig-name descname"><span class="pre">validate_file_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'file'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler.validate_file_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.handlers.file_handler.raiiafFileHandler.validate_file_size" title="Link to this definition">¶</a></dt>
+<dd><p>Validate a file or chunk size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<em>int</em>) – Size in bytes to validate.</p></li>
+<li><p><strong>context</strong> (<em>str</em>) – Validation context; either “file” or “chunk”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the size is within limits.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafDecodeError" title="raiiaf.core.exceptions.raiiafDecodeError"><strong>raiiafDecodeError</strong></a> – If size exceeds configured limits.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">RAIIAF</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html#package-index">Package Index</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="raiiaf.html">raiiaf</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">raiiaf.handlers.file_handler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="raiiaf.chunks.latent.html">raiiaf.chunks.latent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="raiiaf.chunks.image.html">raiiaf.chunks.image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="raiiaf.chunks.env.html">raiiaf.chunks.env</a></li>
+<li class="toctree-l3"><a class="reference internal" href="raiiaf.chunks.metadata.html">raiiaf.chunks.metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="raiiaf.core.constants.html">raiiaf.core.constants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="raiiaf.core.exceptions.html">raiiaf.core.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="raiiaf.core.header.html">raiiaf.core.header</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-raiiaf">Top-level Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-raiiaf.handlers.file_handler">Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-raiiaf.chunks.latent">Chunks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-raiiaf.core.constants">Core</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../api.html">API Reference</a><ul>
+  <li><a href="raiiaf.html">raiiaf</a><ul>
+  <li><a href="raiiaf.handlers.html">raiiaf.handlers</a><ul>
+      <li>Previous: <a href="raiiaf.handlers.html" title="previous chapter">raiiaf.handlers</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Anuroop V J.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.0.4</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/api/raiiaf.handlers.file_handler.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

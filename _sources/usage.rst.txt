@@ -3,14 +3,14 @@ Usage
 
 .. code-block:: python
 
-    from gen5.file_encoder import file_encoder
-    from gen5.file_decoder import file_decoder
+    from raiiaf.file_encoder import file_encoder
+    from raiiaf.file_decoder import file_decoder
     import json
     from PIL import Image
     import io
 
-    gen5.file_encoder(
-        filename="encoded_img.gen5",  # The .gen5 extension is required!
+    raiiaf.file_encoder(
+        filename="encoded_img.raiiaf",  # The .raiiaf extension is required!
         latent=latent,  # initial latent noise
         chunk_records=[],
         model_name="Stable Diffusion 3",
@@ -43,12 +43,12 @@ Usage
     )
 
     # Decoding
-    decoded = gen5.file_decoder("encoded_img.gen5")
+    decoded = raiiaf.file_decoder("encoded_img.raiiaf")
     # now to save the metadata
-    metadata = decoded["metadata"]["gen5_metadata"]
+    metadata = decoded["metadata"]["raiiaf_metadata"]
 
     # to just get specific metadata blocks
-    model_info = decoded["metadata"]["gen5_metadata"]["model_info"]
+    model_info = decoded["metadata"]["raiiaf_metadata"]["model_info"]
 
     # to save decoded metadata to a json file
     with open("decoded_metadata.json", "w") as f:

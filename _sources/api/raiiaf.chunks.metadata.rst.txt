@@ -1,0 +1,12 @@
+raiiaf.chunks.metadata
+======================
+
+.. automodule:: raiiaf.chunks.metadata
+
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      raiiafMetadata
+   

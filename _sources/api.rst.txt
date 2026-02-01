@@ -1,7 +1,7 @@
 API Reference
 =============
 
-This section provides the API reference for the gen5 package, including its
+This section provides the API reference for the raiiaf package, including its
 public classes, functions, and modules.
 
 Package Index
@@ -14,21 +14,21 @@ API documentation.
    :toctree: api/
    :recursive:
 
-   gen5
-   gen5.handlers.file_handler
-   gen5.chunks.latent
-   gen5.chunks.image
-   gen5.chunks.env
-   gen5.chunks.metadata
-   gen5.core.constants
-   gen5.core.exceptions
-   gen5.core.header
+   raiiaf
+   raiiaf.handlers.file_handler
+   raiiaf.chunks.latent
+   raiiaf.chunks.image
+   raiiaf.chunks.env
+   raiiaf.chunks.metadata
+   raiiaf.core.constants
+   raiiaf.core.exceptions
+   raiiaf.core.header
 
 
 Top-level Package
 -----------------
 
-.. automodule:: gen5
+.. automodule:: raiiaf
    :members:
    :undoc-members:
    :show-inheritance:
@@ -37,7 +37,7 @@ Top-level Package
 Handlers
 --------
 
-.. automodule:: gen5.handlers.file_handler
+.. automodule:: raiiaf.handlers.file_handler
    :members:
    :undoc-members:
    :show-inheritance:
@@ -46,22 +46,22 @@ Handlers
 Chunks
 ------
 
-.. automodule:: gen5.chunks.latent
+.. automodule:: raiiaf.chunks.latent
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: gen5.chunks.image
+.. automodule:: raiiaf.chunks.image
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: gen5.chunks.env
+.. automodule:: raiiaf.chunks.env
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: gen5.chunks.metadata
+.. automodule:: raiiaf.chunks.metadata
    :members:
    :undoc-members:
    :show-inheritance:
@@ -70,17 +70,17 @@ Chunks
 Core
 ----
 
-.. automodule:: gen5.core.constants
+.. automodule:: raiiaf.core.constants
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: gen5.core.exceptions
+.. automodule:: raiiaf.core.exceptions
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. automodule:: gen5.core.header
+.. automodule:: raiiaf.core.header
    :members:
    :undoc-members:
    :show-inheritance:

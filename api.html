@@ -5,16 +5,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>API Reference &#8212; Gen5 0.1.0 documentation</title>
+    <title>API Reference &#8212; RAIIAF 1.0.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
     <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
-    <script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/documentation_options.js?v=8d563738"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="gen5" href="api/gen5.html" />
+    <link rel="next" title="raiiaf" href="api/raiiaf.html" />
     <link rel="prev" title="Usage" href="usage.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -35,7 +35,7 @@
             
   <section id="api-reference">
 <h1>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading">¶</a></h1>
-<p>This section provides the API reference for the gen5 package, including its
+<p>This section provides the API reference for the raiiaf package, including its
 public classes, functions, and modules.</p>
 <section id="package-index">
 <h2>Package Index<a class="headerlink" href="#package-index" title="Link to this heading">¶</a></h2>
@@ -43,146 +43,201 @@ public classes, functions, and modules.</p>
 API documentation.</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="api/gen5.html#module-gen5" title="gen5"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gen5</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/raiiaf.html#module-raiiaf" title="raiiaf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raiiaf</span></code></a></p></td>
+<td><p>RAIIAF public API.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/raiiaf.handlers.file_handler.html#module-raiiaf.handlers.file_handler" title="raiiaf.handlers.file_handler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raiiaf.handlers.file_handler</span></code></a></p></td>
+<td><p>RAIIAF file handler for encoding and decoding .raiiaf artifacts.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/raiiaf.chunks.latent.html#module-raiiaf.chunks.latent" title="raiiaf.chunks.latent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raiiaf.chunks.latent</span></code></a></p></td>
+<td><p>Latent chunk utilities for RAIIAF.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/raiiaf.chunks.image.html#module-raiiaf.chunks.image" title="raiiaf.chunks.image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raiiaf.chunks.image</span></code></a></p></td>
+<td><p>Image chunk utilities for RAIIAF.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/raiiaf.chunks.env.html#module-raiiaf.chunks.env" title="raiiaf.chunks.env"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raiiaf.chunks.env</span></code></a></p></td>
+<td><p>Environment chunk utilities for RAIIAF.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="api/raiiaf.chunks.metadata.html#module-raiiaf.chunks.metadata" title="raiiaf.chunks.metadata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raiiaf.chunks.metadata</span></code></a></p></td>
+<td><p>Metadata chunk utilities for RAIIAF.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/raiiaf.core.constants.html#module-raiiaf.core.constants" title="raiiaf.core.constants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raiiaf.core.constants</span></code></a></p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api/gen5.handlers.file_handler.html#module-gen5.handlers.file_handler" title="gen5.handlers.file_handler"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gen5.handlers.file_handler</span></code></a></p></td>
-<td><p></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#module-raiiaf.core.exceptions" title="raiiaf.core.exceptions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raiiaf.core.exceptions</span></code></a></p></td>
+<td><p>Exception hierarchy for RAIIAF operations.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api/gen5.chunks.latent.html#module-gen5.chunks.latent" title="gen5.chunks.latent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gen5.chunks.latent</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api/gen5.chunks.image.html#module-gen5.chunks.image" title="gen5.chunks.image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gen5.chunks.image</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api/gen5.chunks.env.html#module-gen5.chunks.env" title="gen5.chunks.env"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gen5.chunks.env</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api/gen5.chunks.metadata.html#module-gen5.chunks.metadata" title="gen5.chunks.metadata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gen5.chunks.metadata</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api/gen5.core.constants.html#module-gen5.core.constants" title="gen5.core.constants"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gen5.core.constants</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="api/gen5.core.exceptions.html#module-gen5.core.exceptions" title="gen5.core.exceptions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gen5.core.exceptions</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="api/gen5.core.header.html#module-gen5.core.header" title="gen5.core.header"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gen5.core.header</span></code></a></p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="api/raiiaf.core.header.html#module-raiiaf.core.header" title="raiiaf.core.header"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raiiaf.core.header</span></code></a></p></td>
+<td><p>Header utilities for RAIIAF files.</p></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="module-gen5">
-<span id="top-level-package"></span><h2>Top-level Package<a class="headerlink" href="#module-gen5" title="Link to this heading">¶</a></h2>
-</section>
-<section id="module-gen5.handlers.file_handler">
-<span id="handlers"></span><h2>Handlers<a class="headerlink" href="#module-gen5.handlers.file_handler" title="Link to this heading">¶</a></h2>
+<section id="module-raiiaf">
+<span id="top-level-package"></span><h2>Top-level Package<a class="headerlink" href="#module-raiiaf" title="Link to this heading">¶</a></h2>
+<p>RAIIAF public API.</p>
+<p>Exposes the main file handler class for encoding/decoding RAIIAF artifacts.</p>
 <dl class="py class">
-<dt class="sig sig-object py" id="gen5.handlers.file_handler.Gen5FileHandler">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gen5.handlers.file_handler.</span></span><span class="sig-name descname"><span class="pre">Gen5FileHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_file_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_chunk_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/handlers/file_handler.html#Gen5FileHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.handlers.file_handler.Gen5FileHandler" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="raiiaf.raiiafFileHandler">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">raiiaf.</span></span><span class="sig-name descname"><span class="pre">raiiafFileHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_file_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_chunk_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.raiiafFileHandler" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>High-level API for reading and writing RAIIAF files.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="gen5.handlers.file_handler.Gen5FileHandler.bytes_to_png">
-<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">bytes_to_png</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_bytes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Image</span></span></span><a class="reference internal" href="_modules/gen5/handlers/file_handler.html#Gen5FileHandler.bytes_to_png"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.handlers.file_handler.Gen5FileHandler.bytes_to_png" title="Link to this definition">¶</a></dt>
-<dd><p>Convert bytes back to PNG image.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gen5.handlers.file_handler.Gen5FileHandler.file_decoder">
-<span class="sig-name descname"><span class="pre">file_decoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/handlers/file_handler.html#Gen5FileHandler.file_decoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.handlers.file_handler.Gen5FileHandler.file_decoder" title="Link to this definition">¶</a></dt>
-<dd><p>Orchestrator function to decode GEN5 file.
-:param filename: Input GEN5 filename.
-:type filename: str</p>
+<dt class="sig sig-object py" id="raiiaf.raiiafFileHandler.bytes_to_png">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">bytes_to_png</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_bytes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Image</span></span></span><a class="reference internal" href="_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler.bytes_to_png"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.raiiafFileHandler.bytes_to_png" title="Link to this definition">¶</a></dt>
+<dd><p>Convert PNG bytes to a PIL Image.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Dictionary with header, chunks, and metadata.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>img_bytes</strong> (<em>bytes</em>) – PNG image bytes.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>dict</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Loaded image instance.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>PIL.Image.Image</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafImageError" title="raiiaf.core.exceptions.raiiafImageError"><strong>raiiafImageError</strong></a> – If the bytes cannot be decoded as an image.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="gen5.handlers.file_handler.Gen5FileHandler.file_encoder">
-<span class="sig-name descname"><span class="pre">file_encoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_records</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_binary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">should_compress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_float16</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_settings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hardware_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/handlers/file_handler.html#Gen5FileHandler.file_encoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.handlers.file_handler.Gen5FileHandler.file_encoder" title="Link to this definition">¶</a></dt>
-<dd><p>Orchestrator function to encode GEN5 file.
-:param filename: Output GEN5 filename. [.gen5 extension is REQUIRED]
-:type filename: str
-:param latent: Dictionary of latent arrays.
-:type latent: Dict[str, np.ndarray]
-:param chunk_records: List to append chunk records to.
-:type chunk_records: list
-:param model_name: Name of the model.
-:type model_name: str
-:param model_version: Version of the model.
-:type model_version: str
-:param prompt: Prompt used for generation.
-:type prompt: str
-:param tags: List of tags.
-:type tags: list
-:param img_binary: Binary image data.
-:type img_binary: bytes
-:param Returns:
-:param dict: Dictionary with header, latent chunks, metadata, and image chunk.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gen5.handlers.file_handler.Gen5FileHandler.png_to_bytes">
-<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">png_to_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">png_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="reference internal" href="_modules/gen5/handlers/file_handler.html#Gen5FileHandler.png_to_bytes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.handlers.file_handler.Gen5FileHandler.png_to_bytes" title="Link to this definition">¶</a></dt>
-<dd><p>Convert PNG image to bytes, preserving transparency.
-:param png_path: Path to the PNG image.
-:type png_path: str</p>
+<dt class="sig sig-object py" id="raiiaf.raiiafFileHandler.file_decoder">
+<span class="sig-name descname"><span class="pre">file_decoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler.file_decoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.raiiafFileHandler.file_decoder" title="Link to this definition">¶</a></dt>
+<dd><p>Decode a RAIIAF file.</p>
+<p>Reads the header, chunk table (metadata), and iteratively decodes the
+latent, image, and environment chunks.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>PNG image data in bytes.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – Path to the input .raiiaf file.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>bytes</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A dictionary with keys:</dt><dd><ul class="simple">
+<li><p>header (dict): Parsed header fields.</p></li>
+<li><p>chunks (dict): Parsed chunks: ‘latent’ (list), ‘image’ (bytes), ‘env’ (EnvChunk).</p></li>
+<li><p>metadata (dict): Parsed metadata manifest.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafCorruptHeader" title="raiiaf.core.exceptions.raiiafCorruptHeader"><strong>raiiafCorruptHeader</strong></a> – If the header fails validation.</p></li>
+<li><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafChunkError" title="raiiaf.core.exceptions.raiiafChunkError"><strong>raiiafChunkError</strong></a> – If a chunk is truncated or corrupt.</p></li>
+<li><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafEnvChunkError" title="raiiaf.core.exceptions.raiiafEnvChunkError"><strong>raiiafEnvChunkError</strong></a> – If the environment chunk cannot be parsed when uncompressed.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="gen5.handlers.file_handler.Gen5FileHandler.validate_chunk_count">
-<span class="sig-name descname"><span class="pre">validate_chunk_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/gen5/handlers/file_handler.html#Gen5FileHandler.validate_chunk_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.handlers.file_handler.Gen5FileHandler.validate_chunk_count" title="Link to this definition">¶</a></dt>
-<dd><p>Validate number of chunks.</p>
+<dt class="sig sig-object py" id="raiiaf.raiiafFileHandler.file_encoder">
+<span class="sig-name descname"><span class="pre">file_encoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_records</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_binary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">should_compress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_float16</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_settings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hardware_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler.file_encoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.raiiafFileHandler.file_encoder" title="Link to this definition">¶</a></dt>
+<dd><p>Encode a RAIIAF file.</p>
+<p>Orchestrates packing latent, image, environment, and metadata chunks, builds
+the header, and writes the final file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – Output .raiiaf filename. The .raiiaf extension is required.</p></li>
+<li><p><strong>latent</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>np.ndarray</em><em>]</em>) – Mapping of latent keys to arrays.</p></li>
+<li><p><strong>chunk_records</strong> (<em>list</em>) – Mutable list that will be appended with chunk records.</p></li>
+<li><p><strong>model_name</strong> (<em>str</em>) – Name of the model.</p></li>
+<li><p><strong>model_version</strong> (<em>str</em>) – Version of the model.</p></li>
+<li><p><strong>prompt</strong> (<em>str</em>) – Prompt used for generation.</p></li>
+<li><p><strong>tags</strong> (<em>list</em>) – Tags associated with the generation.</p></li>
+<li><p><strong>img_binary</strong> (<em>bytes</em>) – PNG image bytes to embed.</p></li>
+<li><p><strong>should_compress</strong> (<em>bool</em>) – Whether to compress chunks. Defaults to True.</p></li>
+<li><p><strong>convert_float16</strong> (<em>bool</em>) – Convert latents to float16 for storage. Defaults to True.</p></li>
+<li><p><strong>generation_settings</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) – Generation configuration to include in metadata.</p></li>
+<li><p><strong>hardware_info</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) – Hardware information to include in metadata.</p></li>
+<li><p><strong>extra_image</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – Extra fields for the image chunk record.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A dictionary containing header bytes and chunk bytes with keys:</dt><dd><ul class="simple">
+<li><p>header (bytes)</p></li>
+<li><p>latent_chunks (bytes)</p></li>
+<li><p>metadata_chunk (bytes)</p></li>
+<li><p>image_chunk (Optional[bytes])</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.raiiafFileHandler.png_to_bytes">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">png_to_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">png_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="reference internal" href="_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler.png_to_bytes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.raiiafFileHandler.png_to_bytes" title="Link to this definition">¶</a></dt>
+<dd><p>Convert a PNG image to bytes.</p>
+<p>Preserves transparency by converting to RGBA.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>png_path</strong> (<em>str</em>) – Path to the PNG image.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>PNG image data in bytes.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafImageError" title="raiiaf.core.exceptions.raiiafImageError"><strong>raiiafImageError</strong></a> – If the image cannot be read or encoded.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.raiiafFileHandler.validate_chunk_count">
+<span class="sig-name descname"><span class="pre">validate_chunk_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler.validate_chunk_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.raiiafFileHandler.validate_chunk_count" title="Link to this definition">¶</a></dt>
+<dd><p>Validate the number of chunks.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>count</strong> (<em>int</em>) – Number of chunks.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True if valid.</p>
+<dd class="field-even"><p>True if the count is within limits.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>bool</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="api/gen5.core.exceptions.html#gen5.core.exceptions.Gen5DecodeError" title="gen5.core.exceptions.Gen5DecodeError"><strong>Gen5DecodeError</strong></a> – If count exceeds limits.</p>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafDecodeError" title="raiiaf.core.exceptions.raiiafDecodeError"><strong>raiiafDecodeError</strong></a> – If count exceeds configured limits.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="gen5.handlers.file_handler.Gen5FileHandler.validate_file_size">
-<span class="sig-name descname"><span class="pre">validate_file_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'file'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/gen5/handlers/file_handler.html#Gen5FileHandler.validate_file_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.handlers.file_handler.Gen5FileHandler.validate_file_size" title="Link to this definition">¶</a></dt>
-<dd><p>Validate file or chunk size.</p>
+<dt class="sig sig-object py" id="raiiaf.raiiafFileHandler.validate_file_size">
+<span class="sig-name descname"><span class="pre">validate_file_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'file'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler.validate_file_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.raiiafFileHandler.validate_file_size" title="Link to this definition">¶</a></dt>
+<dd><p>Validate a file or chunk size.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>size</strong> (<em>int</em>) – Size in bytes to validate.</p></li>
-<li><p><strong>context</strong> (<em>str</em>) – Context for error message.</p></li>
+<li><p><strong>context</strong> (<em>str</em>) – Validation context; either “file” or “chunk”.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True if valid.</p>
+<dd class="field-even"><p>True if the size is within limits.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>bool</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="api/gen5.core.exceptions.html#gen5.core.exceptions.Gen5DecodeError" title="gen5.core.exceptions.Gen5DecodeError"><strong>Gen5DecodeError</strong></a> – If size exceeds limits.</p>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafDecodeError" title="raiiaf.core.exceptions.raiiafDecodeError"><strong>raiiafDecodeError</strong></a> – If size exceeds configured limits.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -190,49 +245,256 @@ API documentation.</p>
 </dd></dl>
 
 </section>
-<section id="module-gen5.chunks.latent">
-<span id="chunks"></span><h2>Chunks<a class="headerlink" href="#module-gen5.chunks.latent" title="Link to this heading">¶</a></h2>
+<section id="module-raiiaf.handlers.file_handler">
+<span id="handlers"></span><h2>Handlers<a class="headerlink" href="#module-raiiaf.handlers.file_handler" title="Link to this heading">¶</a></h2>
+<p>RAIIAF file handler for encoding and decoding .raiiaf artifacts.</p>
+<p>This module orchestrates packing/unpacking of latent, image, environment, and metadata
+chunks, builds the header, and provides a high-level API for reading and writing
+RAIIAF files.</p>
 <dl class="py class">
-<dt class="sig sig-object py" id="gen5.chunks.latent.Gen5Latent">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gen5.chunks.latent.</span></span><span class="sig-name descname"><span class="pre">Gen5Latent</span></span><a class="reference internal" href="_modules/gen5/chunks/latent.html#Gen5Latent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.latent.Gen5Latent" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="raiiaf.handlers.file_handler.raiiafFileHandler">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">raiiaf.handlers.file_handler.</span></span><span class="sig-name descname"><span class="pre">raiiafFileHandler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_file_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_chunk_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.handlers.file_handler.raiiafFileHandler" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>High-level API for reading and writing RAIIAF files.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="gen5.chunks.latent.Gen5Latent.chunk_packer_binary">
-<span class="sig-name descname"><span class="pre">chunk_packer_binary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chunk_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="reference internal" href="_modules/gen5/chunks/latent.html#Gen5Latent.chunk_packer_binary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.latent.Gen5Latent.chunk_packer_binary" title="Link to this definition">¶</a></dt>
-<dd><p>Pack a binary chunk with header and compress it using Zstandard.
-:param chunk_type: 4-byte chunk type identifier.
-:type chunk_type: bytes
-:param chunk_flags: 4-byte chunk flags.
-:type chunk_flags: bytes
-:param data: Payload data.
-:type data: bytes</p>
+<dt class="sig sig-object py" id="raiiaf.handlers.file_handler.raiiafFileHandler.bytes_to_png">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">bytes_to_png</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_bytes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Image</span></span></span><a class="reference internal" href="_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler.bytes_to_png"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.handlers.file_handler.raiiafFileHandler.bytes_to_png" title="Link to this definition">¶</a></dt>
+<dd><p>Convert PNG bytes to a PIL Image.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Compressed chunk data.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>img_bytes</strong> (<em>bytes</em>) – PNG image bytes.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>bytes</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Loaded image instance.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>PIL.Image.Image</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafImageError" title="raiiaf.core.exceptions.raiiafImageError"><strong>raiiafImageError</strong></a> – If the bytes cannot be decoded as an image.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="gen5.chunks.latent.Gen5Latent.dtype_from_flags">
-<span class="sig-name descname"><span class="pre">dtype_from_flags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dtype</span></span></span><a class="reference internal" href="_modules/gen5/chunks/latent.html#Gen5Latent.dtype_from_flags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.latent.Gen5Latent.dtype_from_flags" title="Link to this definition">¶</a></dt>
-<dd><p>Convert 4-byte chunk flags to NumPy dtype.
-Handles null-padding and validates known types.</p>
+<dt class="sig sig-object py" id="raiiaf.handlers.file_handler.raiiafFileHandler.file_decoder">
+<span class="sig-name descname"><span class="pre">file_decoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler.file_decoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.handlers.file_handler.raiiafFileHandler.file_decoder" title="Link to this definition">¶</a></dt>
+<dd><p>Decode a RAIIAF file.</p>
+<p>Reads the header, chunk table (metadata), and iteratively decodes the
+latent, image, and environment chunks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – Path to the input .raiiaf file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A dictionary with keys:</dt><dd><ul class="simple">
+<li><p>header (dict): Parsed header fields.</p></li>
+<li><p>chunks (dict): Parsed chunks: ‘latent’ (list), ‘image’ (bytes), ‘env’ (EnvChunk).</p></li>
+<li><p>metadata (dict): Parsed metadata manifest.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafCorruptHeader" title="raiiaf.core.exceptions.raiiafCorruptHeader"><strong>raiiafCorruptHeader</strong></a> – If the header fails validation.</p></li>
+<li><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafChunkError" title="raiiaf.core.exceptions.raiiafChunkError"><strong>raiiafChunkError</strong></a> – If a chunk is truncated or corrupt.</p></li>
+<li><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafEnvChunkError" title="raiiaf.core.exceptions.raiiafEnvChunkError"><strong>raiiafEnvChunkError</strong></a> – If the environment chunk cannot be parsed when uncompressed.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="gen5.chunks.latent.Gen5Latent.iter_lazy_latents">
-<span class="sig-name descname"><span class="pre">iter_lazy_latents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_records</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/chunks/latent.html#Gen5Latent.iter_lazy_latents"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.latent.Gen5Latent.iter_lazy_latents" title="Link to this definition">¶</a></dt>
-<dd><p>Yield callables for each latent chunk for lazy loading.</p>
+<dt class="sig sig-object py" id="raiiaf.handlers.file_handler.raiiafFileHandler.file_encoder">
+<span class="sig-name descname"><span class="pre">file_encoder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_records</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_binary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">should_compress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_float16</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_settings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hardware_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler.file_encoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.handlers.file_handler.raiiafFileHandler.file_encoder" title="Link to this definition">¶</a></dt>
+<dd><p>Encode a RAIIAF file.</p>
+<p>Orchestrates packing latent, image, environment, and metadata chunks, builds
+the header, and writes the final file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – Output .raiiaf filename. The .raiiaf extension is required.</p></li>
+<li><p><strong>latent</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>np.ndarray</em><em>]</em>) – Mapping of latent keys to arrays.</p></li>
+<li><p><strong>chunk_records</strong> (<em>list</em>) – Mutable list that will be appended with chunk records.</p></li>
+<li><p><strong>model_name</strong> (<em>str</em>) – Name of the model.</p></li>
+<li><p><strong>model_version</strong> (<em>str</em>) – Version of the model.</p></li>
+<li><p><strong>prompt</strong> (<em>str</em>) – Prompt used for generation.</p></li>
+<li><p><strong>tags</strong> (<em>list</em>) – Tags associated with the generation.</p></li>
+<li><p><strong>img_binary</strong> (<em>bytes</em>) – PNG image bytes to embed.</p></li>
+<li><p><strong>should_compress</strong> (<em>bool</em>) – Whether to compress chunks. Defaults to True.</p></li>
+<li><p><strong>convert_float16</strong> (<em>bool</em>) – Convert latents to float16 for storage. Defaults to True.</p></li>
+<li><p><strong>generation_settings</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) – Generation configuration to include in metadata.</p></li>
+<li><p><strong>hardware_info</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) – Hardware information to include in metadata.</p></li>
+<li><p><strong>extra_image</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – Extra fields for the image chunk record.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A dictionary containing header bytes and chunk bytes with keys:</dt><dd><ul class="simple">
+<li><p>header (bytes)</p></li>
+<li><p>latent_chunks (bytes)</p></li>
+<li><p>metadata_chunk (bytes)</p></li>
+<li><p>image_chunk (Optional[bytes])</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="gen5.chunks.latent.Gen5Latent.latent_dtype_validator">
-<span class="sig-name descname"><span class="pre">latent_dtype_validator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">latent_array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/gen5/chunks/latent.html#Gen5Latent.latent_dtype_validator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.latent.Gen5Latent.latent_dtype_validator" title="Link to this definition">¶</a></dt>
-<dd><p>Validate latent data type.</p>
+<dt class="sig sig-object py" id="raiiaf.handlers.file_handler.raiiafFileHandler.png_to_bytes">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">png_to_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">png_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bytes</span></span></span><a class="reference internal" href="_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler.png_to_bytes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.handlers.file_handler.raiiafFileHandler.png_to_bytes" title="Link to this definition">¶</a></dt>
+<dd><p>Convert a PNG image to bytes.</p>
+<p>Preserves transparency by converting to RGBA.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>png_path</strong> (<em>str</em>) – Path to the PNG image.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>PNG image data in bytes.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafImageError" title="raiiaf.core.exceptions.raiiafImageError"><strong>raiiafImageError</strong></a> – If the image cannot be read or encoded.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.handlers.file_handler.raiiafFileHandler.validate_chunk_count">
+<span class="sig-name descname"><span class="pre">validate_chunk_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler.validate_chunk_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.handlers.file_handler.raiiafFileHandler.validate_chunk_count" title="Link to this definition">¶</a></dt>
+<dd><p>Validate the number of chunks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>count</strong> (<em>int</em>) – Number of chunks.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the count is within limits.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafDecodeError" title="raiiaf.core.exceptions.raiiafDecodeError"><strong>raiiafDecodeError</strong></a> – If count exceeds configured limits.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.handlers.file_handler.raiiafFileHandler.validate_file_size">
+<span class="sig-name descname"><span class="pre">validate_file_size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'file'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/raiiaf/handlers/file_handler.html#raiiafFileHandler.validate_file_size"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.handlers.file_handler.raiiafFileHandler.validate_file_size" title="Link to this definition">¶</a></dt>
+<dd><p>Validate a file or chunk size.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>size</strong> (<em>int</em>) – Size in bytes to validate.</p></li>
+<li><p><strong>context</strong> (<em>str</em>) – Validation context; either “file” or “chunk”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the size is within limits.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafDecodeError" title="raiiaf.core.exceptions.raiiafDecodeError"><strong>raiiafDecodeError</strong></a> – If size exceeds configured limits.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-raiiaf.chunks.latent">
+<span id="chunks"></span><h2>Chunks<a class="headerlink" href="#module-raiiaf.chunks.latent" title="Link to this heading">¶</a></h2>
+<p>Latent chunk utilities for RAIIAF.</p>
+<p>This module provides functionality to validate, pack, compress, and parse latent
+arrays as RAIIAF LATN chunks. It supports compressed (zstd + zfpy) and
+uncompressed representations and exposes helpers for lazy loading.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="raiiaf.chunks.latent.raiiafLatent">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">raiiaf.chunks.latent.</span></span><span class="sig-name descname"><span class="pre">raiiafLatent</span></span><a class="reference internal" href="_modules/raiiaf/chunks/latent.html#raiiafLatent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.latent.raiiafLatent" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Operations for RAIIAF latent (LATN) chunks.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.chunks.latent.raiiafLatent.dtype_from_flags">
+<span class="sig-name descname"><span class="pre">dtype_from_flags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dtype</span></span></span><a class="reference internal" href="_modules/raiiaf/chunks/latent.html#raiiafLatent.dtype_from_flags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.latent.raiiafLatent.dtype_from_flags" title="Link to this definition">¶</a></dt>
+<dd><p>Map 4-byte chunk flags to a NumPy dtype.</p>
+<p>Handles null-padding and validates known types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>flags</strong> (<em>bytes</em>) – 4-byte flag field from the chunk header (e.g., b”F16&quot;).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Corresponding dtype (float16 or float32).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.dtype</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the flag does not correspond to a known dtype.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.chunks.latent.raiiafLatent.iter_lazy_latents">
+<span class="sig-name descname"><span class="pre">iter_lazy_latents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_records</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/chunks/latent.html#raiiafLatent.iter_lazy_latents"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.latent.raiiafLatent.iter_lazy_latents" title="Link to this definition">¶</a></dt>
+<dd><p>Yield callables for each latent chunk to enable lazy loading.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – Path to the RAIIAF file.</p></li>
+<li><p><strong>chunk_records</strong> (<em>list</em>) – List of manifest chunk records.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Callable[[], np.ndarray]</em> – A function that loads and returns each latent array.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.chunks.latent.raiiafLatent.latent_compressor">
+<span class="sig-name descname"><span class="pre">latent_compressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chunk_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/raiiaf/chunks/latent.html#raiiafLatent.latent_compressor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.latent.raiiafLatent.latent_compressor" title="Link to this definition">¶</a></dt>
+<dd><p>Compress a latent array into a LATN chunk.</p>
+<p>The header is compressed with Zstd and payload with ZFPY (optionally lossy).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>chunk_type</strong> (<em>bytes</em>) – 4-byte chunk identifier (b”LATN”).</p></li>
+<li><p><strong>chunk_flags</strong> (<em>bytes</em>) – 4-byte dtype flags (b”F16&quot; or b”F32&quot;).</p></li>
+<li><p><strong>data</strong> (<em>np.ndarray</em>) – NumPy array to compress (float16/float32).</p></li>
+<li><p><strong>tolerance</strong> (<em>float</em>) – zfpy lossy tolerance; 0.0 for lossless. Defaults to 0.0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary with keys ‘chunk’, ‘len_header’, ‘len_data’.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.chunks.latent.raiiafLatent.latent_dtype_validator">
+<span class="sig-name descname"><span class="pre">latent_dtype_validator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">latent_array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/raiiaf/chunks/latent.html#raiiafLatent.latent_dtype_validator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.latent.raiiafLatent.latent_dtype_validator" title="Link to this definition">¶</a></dt>
+<dd><p>Validate latent data type and values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>latent_array</strong> (<em>np.ndarray</em>) – Latent array to validate.</p>
@@ -244,47 +506,72 @@ Handles null-padding and validates known types.</p>
 <dd class="field-odd"><p>bool</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="api/gen5.core.exceptions.html#gen5.core.exceptions.Gen5LatentError" title="gen5.core.exceptions.Gen5LatentError"><strong>Gen5LatentError</strong></a> – If dtype is invalid.</p>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafLatentError" title="raiiaf.core.exceptions.raiiafLatentError"><strong>raiiafLatentError</strong></a> – If dtype or values are invalid (NaN/Inf or unsupported dtype).</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="gen5.chunks.latent.Gen5Latent.latent_packer">
-<span class="sig-name descname"><span class="pre">latent_packer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">latent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_records</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">should_compress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_float16</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/gen5/chunks/latent.html#Gen5Latent.latent_packer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.latent.Gen5Latent.latent_packer" title="Link to this definition">¶</a></dt>
-<dd><p>Pack latent arrays into compressed chunk.
-:param latent: Dictionary of latent arrays.
-:type latent: Dict[str, np.ndarray]
-:param file_offset: Current file offset for chunk placement.
-:type file_offset: int
-:param chunk_records: List to append chunk records to.
-:type chunk_records: list</p>
+<dt class="sig sig-object py" id="raiiaf.chunks.latent.raiiafLatent.latent_packer">
+<span class="sig-name descname"><span class="pre">latent_packer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">latent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_records</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">should_compress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_float16</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/raiiaf/chunks/latent.html#raiiafLatent.latent_packer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.latent.raiiafLatent.latent_packer" title="Link to this definition">¶</a></dt>
+<dd><p>Pack latent arrays into chunk bytes and append manifest records.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>List of compressed latent chunks.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>latent</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>np.ndarray</em><em>]</em>) – Mapping of latent key to array.</p></li>
+<li><p><strong>file_offset</strong> (<em>int</em>) – Current file offset where the first latent chunk will be placed.</p></li>
+<li><p><strong>chunk_records</strong> (<em>Optional</em><em>[</em><em>list</em><em>]</em>) – Mutable list to append chunk records to.</p></li>
+<li><p><strong>should_compress</strong> (<em>bool</em>) – Whether to compress using zstd+zfpy. Defaults to True.</p></li>
+<li><p><strong>convert_float16</strong> (<em>bool</em>) – Convert arrays to float16 before storage. Defaults to True.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>list</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of chunk byte strings (to be concatenated externally).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[bytes]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafLatentError" title="raiiaf.core.exceptions.raiiafLatentError"><strong>raiiafLatentError</strong></a> – If inputs are invalid or unsupported dtypes are used.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="gen5.chunks.latent.Gen5Latent.latent_parser">
-<span class="sig-name descname"><span class="pre">latent_parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chunk</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compressed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/chunks/latent.html#Gen5Latent.latent_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.latent.Gen5Latent.latent_parser" title="Link to this definition">¶</a></dt>
-<dd><p>Parse a given single latent chunk and return the latent array.</p>
+<dt class="sig sig-object py" id="raiiaf.chunks.latent.raiiafLatent.latent_parser">
+<span class="sig-name descname"><span class="pre">latent_parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chunk</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compressed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/chunks/latent.html#raiiafLatent.latent_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.latent.raiiafLatent.latent_parser" title="Link to this definition">¶</a></dt>
+<dd><p>Parse a latent chunk and return the latent array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>chunk</strong> (<em>Union</em><em>[</em><em>bytes</em><em>, </em><em>dict</em><em>]</em>) – Raw bytes for uncompressed chunks or dict with
+keys ‘chunk’, ‘len_header’, ‘len_data’ for compressed chunks.</p></li>
+<li><p><strong>shape</strong> (<em>tuple</em>) – Expected array shape.</p></li>
+<li><p><strong>compressed</strong> (<em>bool</em>) – Whether the chunk is compressed. Defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Parsed latent array with the expected dtype and shape.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafLatentError" title="raiiaf.core.exceptions.raiiafLatentError"><strong>raiiafLatentError</strong></a> – If the chunk is malformed or decompression fails.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="gen5.chunks.latent.Gen5Latent.latent_shape_validator">
-<span class="sig-name descname"><span class="pre">latent_shape_validator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">latent_array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expected_dims</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_dimension_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8192</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/gen5/chunks/latent.html#Gen5Latent.latent_shape_validator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.latent.Gen5Latent.latent_shape_validator" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="raiiaf.chunks.latent.raiiafLatent.latent_shape_validator">
+<span class="sig-name descname"><span class="pre">latent_shape_validator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">latent_array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expected_dims</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_dimension_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8192</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/raiiaf/chunks/latent.html#raiiafLatent.latent_shape_validator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.latent.raiiafLatent.latent_shape_validator" title="Link to this definition">¶</a></dt>
 <dd><p>Validate latent array shape and dimensions.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>latent_array</strong> (<em>np.ndarray</em>) – Latent array to validate.</p></li>
 <li><p><strong>expected_dims</strong> (<em>int</em>) – Expected number of dimensions (default: 4 for NCHW).</p></li>
-<li><p><strong>max_dimension_size</strong> (<em>int</em>) – Maximum size for any single dimension.</p></li>
+<li><p><strong>max_dimension_size</strong> (<em>int</em>) – Maximum allowed size for any single dimension.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -294,140 +581,285 @@ Handles null-padding and validates known types.</p>
 <dd class="field-odd"><p>bool</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><a class="reference internal" href="api/gen5.core.exceptions.html#gen5.core.exceptions.Gen5LatentError" title="gen5.core.exceptions.Gen5LatentError"><strong>Gen5LatentError</strong></a> – If validation fails.</p>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafLatentError" title="raiiaf.core.exceptions.raiiafLatentError"><strong>raiiafLatentError</strong></a> – If validation fails.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="gen5.chunks.latent.Gen5Latent.make_lazy_latent_loader">
-<span class="sig-name descname"><span class="pre">make_lazy_latent_loader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_record</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/chunks/latent.html#Gen5Latent.make_lazy_latent_loader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.latent.Gen5Latent.make_lazy_latent_loader" title="Link to this definition">¶</a></dt>
-<dd><p>Return a callable that loads the latent array on demand.</p>
+<dt class="sig sig-object py" id="raiiaf.chunks.latent.raiiafLatent.make_lazy_latent_loader">
+<span class="sig-name descname"><span class="pre">make_lazy_latent_loader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_record</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/chunks/latent.html#raiiafLatent.make_lazy_latent_loader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.latent.raiiafLatent.make_lazy_latent_loader" title="Link to this definition">¶</a></dt>
+<dd><p>Create a callable that lazily loads the latent array on demand.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – Path to the RAIIAF file.</p></li>
+<li><p><strong>chunk_record</strong> (<em>dict</em>) – Manifest record describing the latent chunk.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A function that loads and returns the latent array.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Callable[[], np.ndarray]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafLatentError" title="raiiaf.core.exceptions.raiiafLatentError"><strong>raiiafLatentError</strong></a> – If the chunk cannot be loaded from the file.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="py class" id="module-gen5.chunks.image">
-<dt class="sig sig-object py" id="gen5.chunks.image.Gen5Image">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gen5.chunks.image.</span></span><span class="sig-name descname"><span class="pre">Gen5Image</span></span><a class="reference internal" href="_modules/gen5/chunks/image.html#Gen5Image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.image.Gen5Image" title="Link to this definition">¶</a></dt>
+<p id="module-raiiaf.chunks.image">Image chunk utilities for RAIIAF.</p>
+<p>Provides validation, packing (compression) and parsing for image data chunks
+(DATA). Uses zstd for compression.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="raiiaf.chunks.image.raiiafImage">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">raiiaf.chunks.image.</span></span><span class="sig-name descname"><span class="pre">raiiafImage</span></span><a class="reference internal" href="_modules/raiiaf/chunks/image.html#raiiafImage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.image.raiiafImage" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Operations for RAIIAF image (DATA) chunks.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="gen5.chunks.image.Gen5Image.image_bytes_validator">
-<span class="sig-name descname"><span class="pre">image_bytes_validator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_bytes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/chunks/image.html#Gen5Image.image_bytes_validator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.image.Gen5Image.image_bytes_validator" title="Link to this definition">¶</a></dt>
-<dd><p>Validate image bytes.
-:param image_bytes: Image bytes to validate.
-:type image_bytes: bytes</p>
+<dt class="sig sig-object py" id="raiiaf.chunks.image.raiiafImage.image_bytes_validator">
+<span class="sig-name descname"><span class="pre">image_bytes_validator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_bytes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/chunks/image.html#raiiafImage.image_bytes_validator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.image.raiiafImage.image_bytes_validator" title="Link to this definition">¶</a></dt>
+<dd><p>Validate image bytes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>image_bytes</strong> (<em>bytes</em>) – Image bytes to validate.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the image bytes form a valid image.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafImageError" title="raiiaf.core.exceptions.raiiafImageError"><strong>raiiafImageError</strong></a> – If validation fails.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="gen5.chunks.image.Gen5Image.image_data_chunk_builder">
-<span class="sig-name descname"><span class="pre">image_data_chunk_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_binary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/chunks/image.html#Gen5Image.image_data_chunk_builder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.image.Gen5Image.image_data_chunk_builder" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="raiiaf.chunks.image.raiiafImage.image_data_chunk_builder">
+<span class="sig-name descname"><span class="pre">image_data_chunk_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image_binary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/chunks/image.html#raiiafImage.image_data_chunk_builder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.image.raiiafImage.image_data_chunk_builder" title="Link to this definition">¶</a></dt>
+<dd><p>Build a compressed image DATA chunk from raw image bytes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>image_binary</strong> (<em>bytes</em>) – Raw PNG image bytes to store.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Compressed chunk bytes suitable for writing to the RAIIAF file.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafImageError" title="raiiaf.core.exceptions.raiiafImageError"><strong>raiiafImageError</strong></a> – If the chunk cannot be constructed.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.chunks.image.raiiafImage.image_data_chunk_parser">
+<span class="sig-name descname"><span class="pre">image_data_chunk_parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">compressed_chunk</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/chunks/image.html#raiiafImage.image_data_chunk_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.image.raiiafImage.image_data_chunk_parser" title="Link to this definition">¶</a></dt>
+<dd><p>Parse a compressed image DATA chunk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>compressed_chunk</strong> (<em>bytes</em>) – Compressed image data chunk.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Parsed info with keys ‘chunk_type’, ‘chunk_flags’, ‘chunk_size’, ‘image_data’.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafImageError" title="raiiaf.core.exceptions.raiiafImageError"><strong>raiiafImageError</strong></a> – If decompression or parsing fails.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<p id="module-raiiaf.chunks.env">Environment chunk utilities for RAIIAF.</p>
+<p>Defines dataclasses for environment components and provides helpers to populate,
+build (compress), and parse environment (ENVC) chunks.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="raiiaf.chunks.env.EnvChunk">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">raiiaf.chunks.env.</span></span><span class="sig-name descname"><span class="pre">EnvChunk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="api/raiiaf.chunks.env.html#raiiaf.chunks.env.EnvComponent" title="raiiaf.chunks.env.EnvComponent"><span class="pre">EnvComponent</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/chunks/env.html#EnvChunk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.env.EnvChunk" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Structured environment chunk content.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="raiiaf.chunks.env.EnvChunk.env_version">
+<span class="sig-name descname"><span class="pre">env_version</span></span><a class="headerlink" href="#raiiaf.chunks.env.EnvChunk.env_version" title="Link to this definition">¶</a></dt>
+<dd><p>Environment chunk version number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="raiiaf.chunks.env.EnvChunk.components">
+<span class="sig-name descname"><span class="pre">components</span></span><a class="headerlink" href="#raiiaf.chunks.env.EnvChunk.components" title="Link to this definition">¶</a></dt>
+<dd><p>List of environment components.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="api/raiiaf.chunks.env.html#raiiaf.chunks.env.EnvComponent" title="raiiaf.chunks.env.EnvComponent">EnvComponent</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">components</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="api/raiiaf.chunks.env.html#raiiaf.chunks.env.EnvComponent" title="raiiaf.chunks.env.EnvComponent"><span class="pre">EnvComponent</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">env_version</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></span><a class="headerlink" href="#id1" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="raiiaf.chunks.env.EnvComponent">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">raiiaf.chunks.env.</span></span><span class="sig-name descname"><span class="pre">EnvComponent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cononical_str</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component_sha256_digest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/chunks/env.html#EnvComponent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.env.EnvComponent" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Single environment component captured in the ENVC chunk.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="raiiaf.chunks.env.EnvComponent.component_id">
+<span class="sig-name descname"><span class="pre">component_id</span></span><a class="headerlink" href="#raiiaf.chunks.env.EnvComponent.component_id" title="Link to this definition">¶</a></dt>
+<dd><p>Identifier (e.g., ‘torch’, ‘numpy’, ‘python’, ‘cuda’, ‘os’, ‘gpu’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="raiiaf.chunks.env.EnvComponent.cononical_str">
+<span class="sig-name descname"><span class="pre">cononical_str</span></span><a class="headerlink" href="#raiiaf.chunks.env.EnvComponent.cononical_str" title="Link to this definition">¶</a></dt>
+<dd><p>Canonical string describing the component and version.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="raiiaf.chunks.env.EnvComponent.component_sha256_digest">
+<span class="sig-name descname"><span class="pre">component_sha256_digest</span></span><a class="headerlink" href="#raiiaf.chunks.env.EnvComponent.component_sha256_digest" title="Link to this definition">¶</a></dt>
+<dd><p>SHA-256 digest for the canonical string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">component_id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#id2" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">component_sha256_digest</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bytes</span></span><a class="headerlink" href="#id3" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">cononical_str</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#id4" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="raiiaf.chunks.env.raiiafEnv">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">raiiaf.chunks.env.</span></span><span class="sig-name descname"><span class="pre">raiiafEnv</span></span><a class="reference internal" href="_modules/raiiaf/chunks/env.html#raiiafEnv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.env.raiiafEnv" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Operations for RAIIAF environment (ENVC) chunks.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="gen5.chunks.image.Gen5Image.image_data_chunk_parser">
-<span class="sig-name descname"><span class="pre">image_data_chunk_parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">compressed_chunk</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/chunks/image.html#Gen5Image.image_data_chunk_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.image.Gen5Image.image_data_chunk_parser" title="Link to this definition">¶</a></dt>
-<dd><p>Parse image data chunk.
-:param compressed_chunk: Compressed image data chunk.
-:type compressed_chunk: bytes</p>
+<dt class="sig sig-object py" id="raiiaf.chunks.env.raiiafEnv.env_chunk_builder">
+<span class="sig-name descname"><span class="pre">env_chunk_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_chunk</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api/raiiaf.chunks.env.html#raiiaf.chunks.env.EnvChunk" title="raiiaf.chunks.env.EnvChunk"><span class="pre">EnvChunk</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/chunks/env.html#raiiafEnv.env_chunk_builder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.env.raiiafEnv.env_chunk_builder" title="Link to this definition">¶</a></dt>
+<dd><p>Build a compressed ENVC chunk from an EnvChunk object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>env_chunk</strong> (<a class="reference internal" href="api/raiiaf.chunks.env.html#raiiaf.chunks.env.EnvChunk" title="raiiaf.chunks.env.EnvChunk"><em>EnvChunk</em></a>) – Populated environment chunk object.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Compressed chunk bytes and the raw env JSON bytes.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[bytes, bytes]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafEnvChunkError" title="raiiaf.core.exceptions.raiiafEnvChunkError"><strong>raiiafEnvChunkError</strong></a> – If building or compression fails.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.chunks.env.raiiafEnv.env_chunk_parser">
+<span class="sig-name descname"><span class="pre">env_chunk_parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">compressed_chunk</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/chunks/env.html#raiiafEnv.env_chunk_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.env.raiiafEnv.env_chunk_parser" title="Link to this definition">¶</a></dt>
+<dd><p>Parse a compressed ENVC chunk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>compressed_chunk</strong> (<em>bytes</em>) – Compressed environment chunk.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Parsed environment with keys ‘chunk_type’, ‘chunk_flags’, ‘chunk_size’, ‘env_chunk’.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.chunks.env.raiiafEnv.env_chunk_populator">
+<span class="sig-name descname"><span class="pre">env_chunk_populator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/chunks/env.html#raiiafEnv.env_chunk_populator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.env.raiiafEnv.env_chunk_populator" title="Link to this definition">¶</a></dt>
+<dd><p>Populate the environment chunk with component hashes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Parsed image data chunk information.</p>
+<dd class="field-odd"><p>Populated environment chunk object with common components.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>dict</p>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.chunks.env.html#raiiaf.chunks.env.EnvChunk" title="raiiaf.chunks.env.EnvChunk">EnvChunk</a></p>
 </dd>
 </dl>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="py class" id="module-gen5.chunks.env">
-<dt class="sig sig-object py" id="gen5.chunks.env.EnvChunk">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gen5.chunks.env.</span></span><span class="sig-name descname"><span class="pre">EnvChunk</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">components</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="api/gen5.chunks.env.html#gen5.chunks.env.EnvComponent" title="gen5.chunks.env.EnvComponent"><span class="pre">gen5.chunks.env.EnvComponent</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/chunks/env.html#EnvChunk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.env.EnvChunk" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gen5.chunks.env.EnvChunk.components">
-<span class="sig-name descname"><span class="pre">components</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="api/gen5.chunks.env.html#gen5.chunks.env.EnvComponent" title="gen5.chunks.env.EnvComponent"><span class="pre">EnvComponent</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#gen5.chunks.env.EnvChunk.components" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gen5.chunks.env.EnvChunk.env_version">
-<span class="sig-name descname"><span class="pre">env_version</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></span><a class="headerlink" href="#gen5.chunks.env.EnvChunk.env_version" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
+<p id="module-raiiaf.chunks.metadata">Metadata chunk utilities for RAIIAF.</p>
+<p>Provides validation against a JSON schema, compression/decompression helpers for the
+metadata chunk (META), and manifest construction helpers.</p>
 <dl class="py class">
-<dt class="sig sig-object py" id="gen5.chunks.env.EnvComponent">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gen5.chunks.env.</span></span><span class="sig-name descname"><span class="pre">EnvComponent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cononical_str</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component_sha256_digest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/chunks/env.html#EnvComponent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.env.EnvComponent" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="raiiaf.chunks.metadata.raiiafMetadata">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">raiiaf.chunks.metadata.</span></span><span class="sig-name descname"><span class="pre">raiiafMetadata</span></span><a class="reference internal" href="_modules/raiiaf/chunks/metadata.html#raiiafMetadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.metadata.raiiafMetadata" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gen5.chunks.env.EnvComponent.component_id">
-<span class="sig-name descname"><span class="pre">component_id</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#gen5.chunks.env.EnvComponent.component_id" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gen5.chunks.env.EnvComponent.component_sha256_digest">
-<span class="sig-name descname"><span class="pre">component_sha256_digest</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bytes</span></span><a class="headerlink" href="#gen5.chunks.env.EnvComponent.component_sha256_digest" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="gen5.chunks.env.EnvComponent.cononical_str">
-<span class="sig-name descname"><span class="pre">cononical_str</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></span><a class="headerlink" href="#gen5.chunks.env.EnvComponent.cononical_str" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="gen5.chunks.env.Gen5Env">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gen5.chunks.env.</span></span><span class="sig-name descname"><span class="pre">Gen5Env</span></span><a class="reference internal" href="_modules/gen5/chunks/env.html#Gen5Env"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.env.Gen5Env" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Operations for RAIIAF metadata (META) chunks.</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="gen5.chunks.env.Gen5Env.env_chunk_builder">
-<span class="sig-name descname"><span class="pre">env_chunk_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_chunk</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="api/gen5.chunks.env.html#gen5.chunks.env.EnvChunk" title="gen5.chunks.env.EnvChunk"><span class="pre">EnvChunk</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/chunks/env.html#Gen5Env.env_chunk_builder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.env.Gen5Env.env_chunk_builder" title="Link to this definition">¶</a></dt>
-<dd><p>Builds the environment chunk correctly</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gen5.chunks.env.Gen5Env.env_chunk_parser">
-<span class="sig-name descname"><span class="pre">env_chunk_parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">compressed_chunk</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/chunks/env.html#Gen5Env.env_chunk_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.env.Gen5Env.env_chunk_parser" title="Link to this definition">¶</a></dt>
-<dd><p>Parse environment chunk.
-:param compressed_chunk: Compressed environment chunk.
-:type compressed_chunk: bytes
-:param Returns:
-:param dict: Parsed environment chunk information.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gen5.chunks.env.Gen5Env.env_chunk_populator">
-<span class="sig-name descname"><span class="pre">env_chunk_populator</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/chunks/env.html#Gen5Env.env_chunk_populator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.env.Gen5Env.env_chunk_populator" title="Link to this definition">¶</a></dt>
-<dd><p>Populates the environment chunk with hashes of the components</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class" id="module-gen5.chunks.metadata">
-<dt class="sig sig-object py" id="gen5.chunks.metadata.Gen5Metadata">
-<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gen5.chunks.metadata.</span></span><span class="sig-name descname"><span class="pre">Gen5Metadata</span></span><a class="reference internal" href="_modules/gen5/chunks/metadata.html#Gen5Metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.metadata.Gen5Metadata" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="gen5.chunks.metadata.Gen5Metadata.build_manifest">
-<span class="sig-name descname"><span class="pre">build_manifest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version_major</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version_minor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_records</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_settings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hardware_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/chunks/metadata.html#Gen5Metadata.build_manifest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.metadata.Gen5Metadata.build_manifest" title="Link to this definition">¶</a></dt>
-<dd><dl>
-<dt>chunk_records must be a list of dicts, with each having:</dt><dd><dl class="simple">
-<dt>{</dt><dd><p>“type”: str,
-“flags”: str,
-“offset”: int,
-“compressed_size”: int,
-“uncompressed_size”: int,
-“hash”: str,
-“extra”: dict</p>
-</dd>
-</dl>
-<p>}</p>
-</dd>
-</dl>
+<dt class="sig sig-object py" id="raiiaf.chunks.metadata.raiiafMetadata.build_manifest">
+<span class="sig-name descname"><span class="pre">build_manifest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version_major</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version_minor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_version</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_records</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generation_settings</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hardware_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/chunks/metadata.html#raiiafMetadata.build_manifest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.metadata.raiiafMetadata.build_manifest" title="Link to this definition">¶</a></dt>
+<dd><p>Build a manifest dictionary from inputs and chunk records.</p>
+<p>chunk_records must be a list of dicts, with each having:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="s2">&quot;flags&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="s2">&quot;offset&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="s2">&quot;compressed_size&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="s2">&quot;uncompressed_size&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="s2">&quot;hash&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="s2">&quot;extra&quot;</span><span class="p">:</span> <span class="nb">dict</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -438,8 +870,10 @@ Handles null-padding and validates known types.</p>
 <li><p><strong>prompt</strong> (<em>str</em>) – Prompt used for generation.</p></li>
 <li><p><strong>tags</strong> (<em>list</em>) – List of tags.</p></li>
 <li><p><strong>chunk_records</strong> (<em>list</em>) – List of chunk record dictionaries.</p></li>
-<li><p><strong>generation_settings</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) – Generation settings. Defaults to predefined structure if not provided.</p></li>
-<li><p><strong>hardware_info</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) – Hardware information. Defaults to predefined structure if not provided.</p></li>
+<li><p><strong>generation_settings</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) – Generation settings. Defaults to predefined
+structure if not provided.</p></li>
+<li><p><strong>hardware_info</strong> (<em>Optional</em><em>[</em><em>dict</em><em>]</em>) – Hardware information. Defaults to predefined
+structure if not provided.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -452,41 +886,55 @@ Handles null-padding and validates known types.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="gen5.chunks.metadata.Gen5Metadata.metadata_compressor">
-<span class="sig-name descname"><span class="pre">metadata_compressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manifest</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/chunks/metadata.html#Gen5Metadata.metadata_compressor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.metadata.Gen5Metadata.metadata_compressor" title="Link to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="gen5.chunks.metadata.Gen5Metadata.metadata_parser">
-<span class="sig-name descname"><span class="pre">metadata_parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">compressed_chunk</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/gen5/chunks/metadata.html#Gen5Metadata.metadata_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.metadata.Gen5Metadata.metadata_parser" title="Link to this definition">¶</a></dt>
-<dd><p>Parse and decompress metadata chunk.
-:param compressed_chunk: Compressed metadata chunk.
-:type compressed_chunk: bytes</p>
+<dt class="sig sig-object py" id="raiiaf.chunks.metadata.raiiafMetadata.metadata_compressor">
+<span class="sig-name descname"><span class="pre">metadata_compressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manifest</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/chunks/metadata.html#raiiafMetadata.metadata_compressor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.metadata.raiiafMetadata.metadata_compressor" title="Link to this definition">¶</a></dt>
+<dd><p>Compress a manifest into a META chunk.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Parsed metadata manifest.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>manifest</strong> (<em>dict</em>) – Manifest dictionary to serialize and compress.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>dict</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Compressed META chunk bytes.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="gen5.chunks.metadata.Gen5Metadata.metadata_validator">
-<span class="sig-name descname"><span class="pre">metadata_validator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manifest</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/gen5/chunks/metadata.html#Gen5Metadata.metadata_validator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.chunks.metadata.Gen5Metadata.metadata_validator" title="Link to this definition">¶</a></dt>
-<dd><p>Validate metadata manifest using JSON Schema.
-:param manifest: Metadata manifest.
-:type manifest: dict</p>
+<dt class="sig sig-object py" id="raiiaf.chunks.metadata.raiiafMetadata.metadata_parser">
+<span class="sig-name descname"><span class="pre">metadata_parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">compressed_chunk</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/raiiaf/chunks/metadata.html#raiiafMetadata.metadata_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.metadata.raiiafMetadata.metadata_parser" title="Link to this definition">¶</a></dt>
+<dd><p>Parse and decompress a META chunk.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>True if it is valid or False otherwise.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>compressed_chunk</strong> (<em>bytes</em>) – Compressed metadata chunk.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>bool</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Parsed metadata manifest.</p>
 </dd>
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="api/gen5.core.exceptions.html#gen5.core.exceptions.Gen5MetadataError" title="gen5.core.exceptions.Gen5MetadataError"><strong>Gen5MetadataError</strong></a> – If the metadata is invalid.</p>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.chunks.metadata.raiiafMetadata.metadata_validator">
+<span class="sig-name descname"><span class="pre">metadata_validator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manifest</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/raiiaf/chunks/metadata.html#raiiafMetadata.metadata_validator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.metadata.raiiafMetadata.metadata_validator" title="Link to this definition">¶</a></dt>
+<dd><p>Validate a metadata manifest using the JSON Schema.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>manifest</strong> (<em>dict</em>) – Metadata manifest.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if it is valid.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafMetadataError" title="raiiaf.core.exceptions.raiiafMetadataError"><strong>raiiafMetadataError</strong></a> – If the metadata is invalid.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -494,99 +942,140 @@ Handles null-padding and validates known types.</p>
 </dd></dl>
 
 </section>
-<section id="module-gen5.core.constants">
-<span id="core"></span><h2>Core<a class="headerlink" href="#module-gen5.core.constants" title="Link to this heading">¶</a></h2>
-<dl class="py exception" id="module-gen5.core.exceptions">
-<dt class="sig sig-object py" id="gen5.core.exceptions.Gen5ChunkError">
-<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gen5.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">Gen5ChunkError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/core/exceptions.html#Gen5ChunkError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.exceptions.Gen5ChunkError" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="api/gen5.core.exceptions.html#gen5.core.exceptions.Gen5DecodeError" title="gen5.core.exceptions.Gen5DecodeError"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gen5DecodeError</span></code></a></p>
+<section id="module-raiiaf.core.constants">
+<span id="core"></span><h2>Core<a class="headerlink" href="#module-raiiaf.core.constants" title="Link to this heading">¶</a></h2>
+<p id="module-raiiaf.core.exceptions">Exception hierarchy for RAIIAF operations.</p>
+<p>Defines specialized exceptions for decode errors, corrupt headers, metadata issues,
+chunk-level errors, and specific latent/image/environment chunk problems.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="raiiaf.core.exceptions.raiiafChunkError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">raiiaf.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">raiiafChunkError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/core/exceptions.html#raiiafChunkError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.core.exceptions.raiiafChunkError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafDecodeError" title="raiiaf.core.exceptions.raiiafDecodeError"><code class="xref py py-class docutils literal notranslate"><span class="pre">raiiafDecodeError</span></code></a></p>
+<p>Raised for generic chunk-level issues (truncation, bounds, etc.).</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="gen5.core.exceptions.Gen5CorruptHeader">
-<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gen5.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">Gen5CorruptHeader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/core/exceptions.html#Gen5CorruptHeader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.exceptions.Gen5CorruptHeader" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="api/gen5.core.exceptions.html#gen5.core.exceptions.Gen5DecodeError" title="gen5.core.exceptions.Gen5DecodeError"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gen5DecodeError</span></code></a></p>
+<dt class="sig sig-object py" id="raiiaf.core.exceptions.raiiafCorruptHeader">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">raiiaf.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">raiiafCorruptHeader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/core/exceptions.html#raiiafCorruptHeader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.core.exceptions.raiiafCorruptHeader" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafDecodeError" title="raiiaf.core.exceptions.raiiafDecodeError"><code class="xref py py-class docutils literal notranslate"><span class="pre">raiiafDecodeError</span></code></a></p>
+<p>Raised when the file header is detected as corrupt or invalid.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="gen5.core.exceptions.Gen5DecodeError">
-<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gen5.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">Gen5DecodeError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/core/exceptions.html#Gen5DecodeError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.exceptions.Gen5DecodeError" title="Link to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="raiiaf.core.exceptions.raiiafDecodeError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">raiiaf.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">raiiafDecodeError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/core/exceptions.html#raiiafDecodeError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.core.exceptions.raiiafDecodeError" title="Link to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Base error for RAIIAF decoding/validation failures.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="gen5.core.exceptions.Gen5EnvChunkError">
-<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gen5.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">Gen5EnvChunkError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/core/exceptions.html#Gen5EnvChunkError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.exceptions.Gen5EnvChunkError" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="api/gen5.core.exceptions.html#gen5.core.exceptions.Gen5ChunkError" title="gen5.core.exceptions.Gen5ChunkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gen5ChunkError</span></code></a></p>
+<dt class="sig sig-object py" id="raiiaf.core.exceptions.raiiafEnvChunkError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">raiiaf.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">raiiafEnvChunkError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/core/exceptions.html#raiiafEnvChunkError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.core.exceptions.raiiafEnvChunkError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafChunkError" title="raiiaf.core.exceptions.raiiafChunkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">raiiafChunkError</span></code></a></p>
+<p>Raised for environment (ENVC) chunk parsing/validation issues.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="gen5.core.exceptions.Gen5ImageError">
-<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gen5.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">Gen5ImageError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/core/exceptions.html#Gen5ImageError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.exceptions.Gen5ImageError" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="api/gen5.core.exceptions.html#gen5.core.exceptions.Gen5ChunkError" title="gen5.core.exceptions.Gen5ChunkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gen5ChunkError</span></code></a></p>
+<dt class="sig sig-object py" id="raiiaf.core.exceptions.raiiafImageError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">raiiaf.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">raiiafImageError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/core/exceptions.html#raiiafImageError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.core.exceptions.raiiafImageError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafChunkError" title="raiiaf.core.exceptions.raiiafChunkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">raiiafChunkError</span></code></a></p>
+<p>Raised for image (DATA) chunk issues or image conversion errors.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="gen5.core.exceptions.Gen5LatentError">
-<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gen5.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">Gen5LatentError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/core/exceptions.html#Gen5LatentError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.exceptions.Gen5LatentError" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="api/gen5.core.exceptions.html#gen5.core.exceptions.Gen5ChunkError" title="gen5.core.exceptions.Gen5ChunkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gen5ChunkError</span></code></a></p>
+<dt class="sig sig-object py" id="raiiaf.core.exceptions.raiiafLatentError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">raiiaf.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">raiiafLatentError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/core/exceptions.html#raiiafLatentError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.core.exceptions.raiiafLatentError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafChunkError" title="raiiaf.core.exceptions.raiiafChunkError"><code class="xref py py-class docutils literal notranslate"><span class="pre">raiiafChunkError</span></code></a></p>
+<p>Raised for latent (LATN) chunk issues.</p>
 </dd></dl>
 
 <dl class="py exception">
-<dt class="sig sig-object py" id="gen5.core.exceptions.Gen5MetadataError">
-<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">gen5.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">Gen5MetadataError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/core/exceptions.html#Gen5MetadataError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.exceptions.Gen5MetadataError" title="Link to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="api/gen5.core.exceptions.html#gen5.core.exceptions.Gen5DecodeError" title="gen5.core.exceptions.Gen5DecodeError"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gen5DecodeError</span></code></a></p>
+<dt class="sig sig-object py" id="raiiaf.core.exceptions.raiiafMetadataError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">raiiaf.core.exceptions.</span></span><span class="sig-name descname"><span class="pre">raiiafMetadataError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/core/exceptions.html#raiiafMetadataError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.core.exceptions.raiiafMetadataError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafDecodeError" title="raiiaf.core.exceptions.raiiafDecodeError"><code class="xref py py-class docutils literal notranslate"><span class="pre">raiiafDecodeError</span></code></a></p>
+<p>Raised when the metadata (manifest) is invalid or cannot be parsed.</p>
 </dd></dl>
 
-<dl class="py function" id="module-gen5.core.header">
-<dt class="sig sig-object py" id="gen5.core.header.header_init">
-<span class="sig-prename descclassname"><span class="pre">gen5.core.header.</span></span><span class="sig-name descname"><span class="pre">header_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version_major</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version_minor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_table_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_table_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reserved</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/core/header.html#header_init"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.header.header_init" title="Link to this definition">¶</a></dt>
-<dd><p>Initialize GEN5 file header.
-Returns the packed header bytes.
-:param version_major: Major version number.
-:type version_major: int
-:param version_minor: Minor version number.
-:type version_minor: int
-:param flags: Header flags.
-:type flags: int
-:param chunk_table_offset: Offset to the chunk table.
-:type chunk_table_offset: int
-:param chunk_table_size: Size of the chunk table.
-:type chunk_table_size: int
-:param chunk_count: Number of chunks.
-:type chunk_count: int
-:param file_size: Total file size.
-:type file_size: int
-:param reserved: Reserved for future use.
-:type reserved: int</p>
-</dd></dl>
-
+<p id="module-raiiaf.core.header">Header utilities for RAIIAF files.</p>
+<p>This module defines functions to initialize, parse, and validate the RAIIAF
+file header. The header layout is defined by <code class="docutils literal notranslate"><span class="pre">raiiaf.core.constants.HEADER_FORMAT</span></code>
+and has the following fields:</p>
+<ul class="simple">
+<li><p>magic (6s): ASCII bytes b”raiiaf”</p></li>
+<li><p>version_major (B)</p></li>
+<li><p>version_minor (B)</p></li>
+<li><p>flags (B)</p></li>
+<li><p>chunk_table_offset (I)</p></li>
+<li><p>chunk_table_size (I)</p></li>
+<li><p>chunk_count (I)</p></li>
+<li><p>file_size (I)</p></li>
+<li><p>reserved (I)</p></li>
+</ul>
 <dl class="py function">
-<dt class="sig sig-object py" id="gen5.core.header.header_parse">
-<span class="sig-prename descclassname"><span class="pre">gen5.core.header.</span></span><span class="sig-name descname"><span class="pre">header_parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/gen5/core/header.html#header_parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.header.header_parse" title="Link to this definition">¶</a></dt>
-<dd><p>Parse GEN5 file header.
-:param data: The header bytes to parse.
-:type data: bytes
-:param Returns:
-:param dict: Parsed header fields.</p>
+<dt class="sig sig-object py" id="raiiaf.core.header.header_init">
+<span class="sig-prename descclassname"><span class="pre">raiiaf.core.header.</span></span><span class="sig-name descname"><span class="pre">header_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version_major</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version_minor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_table_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_table_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reserved</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/raiiaf/core/header.html#header_init"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.core.header.header_init" title="Link to this definition">¶</a></dt>
+<dd><p>Initialize and pack a RAIIAF file header.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Parsed header fields.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>version_major</strong> (<em>int</em>) – Major version number.</p></li>
+<li><p><strong>version_minor</strong> (<em>int</em>) – Minor version number.</p></li>
+<li><p><strong>flags</strong> (<em>int</em>) – Header flags.</p></li>
+<li><p><strong>chunk_table_offset</strong> (<em>int</em>) – Offset (in bytes) to the start of the chunk table.</p></li>
+<li><p><strong>chunk_table_size</strong> (<em>int</em>) – Size (in bytes) of the chunk table.</p></li>
+<li><p><strong>chunk_count</strong> (<em>int</em>) – Number of chunks referenced in the table.</p></li>
+<li><p><strong>file_size</strong> (<em>int</em>) – Total file size in bytes.</p></li>
+<li><p><strong>reserved</strong> (<em>int</em>) – Reserved for future use.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>dict</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Packed header bytes conforming to HEADER_FORMAT.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="gen5.core.header.header_validate">
-<span class="sig-prename descclassname"><span class="pre">gen5.core.header.</span></span><span class="sig-name descname"><span class="pre">header_validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/gen5/core/header.html#header_validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gen5.core.header.header_validate" title="Link to this definition">¶</a></dt>
-<dd><p>Validate GEN5 file header.
-:param header: Parsed header fields.
-:type header: dict
-:param Returns:
-:param bool: True if it is valid or False otherwise.</p>
+<dt class="sig sig-object py" id="raiiaf.core.header.header_parse">
+<span class="sig-prename descclassname"><span class="pre">raiiaf.core.header.</span></span><span class="sig-name descname"><span class="pre">header_parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buf</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/raiiaf/core/header.html#header_parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.core.header.header_parse" title="Link to this definition">¶</a></dt>
+<dd><p>Parse a RAIIAF header from raw bytes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>buf</strong> (<em>bytes</em>) – Raw file bytes containing the header at the beginning.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Parsed header fields with keys: magic, version_major, version_minor,</dt><dd><p>flags, chunk_table_offset, chunk_table_size, chunk_count, file_size, reserved.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="api/raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafCorruptHeader" title="raiiaf.core.exceptions.raiiafCorruptHeader"><strong>raiiafCorruptHeader</strong></a> – If the provided buffer is too small.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="raiiaf.core.header.header_validate">
+<span class="sig-prename descclassname"><span class="pre">raiiaf.core.header.</span></span><span class="sig-name descname"><span class="pre">header_validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/raiiaf/core/header.html#header_validate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.core.header.header_validate" title="Link to this definition">¶</a></dt>
+<dd><p>Validate a parsed RAIIAF header.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>header</strong> (<em>dict</em>) – Parsed header fields as returned by header_parse.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the header is valid, False otherwise.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
@@ -599,7 +1088,7 @@ Returns the packed header bytes.
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Gen5</a></h1>
+<h1 class="logo"><a href="index.html">RAIIAF</a></h1>
 
 
 
@@ -622,11 +1111,48 @@ Returns the packed header bytes.
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#package-index">Package Index</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-gen5">Top-level Package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-gen5.handlers.file_handler">Handlers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-gen5.chunks.latent">Chunks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-gen5.core.constants">Core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#package-index">Package Index</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api/raiiaf.html">raiiaf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/raiiaf.handlers.file_handler.html">raiiaf.handlers.file_handler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/raiiaf.chunks.latent.html">raiiaf.chunks.latent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/raiiaf.chunks.image.html">raiiaf.chunks.image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/raiiaf.chunks.env.html">raiiaf.chunks.env</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/raiiaf.chunks.metadata.html">raiiaf.chunks.metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/raiiaf.core.constants.html">raiiaf.core.constants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/raiiaf.core.exceptions.html">raiiaf.core.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api/raiiaf.core.header.html">raiiaf.core.header</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-raiiaf">Top-level Package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#raiiaf.raiiafFileHandler"><code class="docutils literal notranslate"><span class="pre">raiiafFileHandler</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-raiiaf.handlers.file_handler">Handlers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#raiiaf.handlers.file_handler.raiiafFileHandler"><code class="docutils literal notranslate"><span class="pre">raiiafFileHandler</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-raiiaf.chunks.latent">Chunks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#raiiaf.chunks.latent.raiiafLatent"><code class="docutils literal notranslate"><span class="pre">raiiafLatent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raiiaf.chunks.image.raiiafImage"><code class="docutils literal notranslate"><span class="pre">raiiafImage</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raiiaf.chunks.env.EnvChunk"><code class="docutils literal notranslate"><span class="pre">EnvChunk</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raiiaf.chunks.env.EnvComponent"><code class="docutils literal notranslate"><span class="pre">EnvComponent</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raiiaf.chunks.env.raiiafEnv"><code class="docutils literal notranslate"><span class="pre">raiiafEnv</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raiiaf.chunks.metadata.raiiafMetadata"><code class="docutils literal notranslate"><span class="pre">raiiafMetadata</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-raiiaf.core.constants">Core</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#raiiaf.core.exceptions.raiiafChunkError"><code class="docutils literal notranslate"><span class="pre">raiiafChunkError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raiiaf.core.exceptions.raiiafCorruptHeader"><code class="docutils literal notranslate"><span class="pre">raiiafCorruptHeader</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raiiaf.core.exceptions.raiiafDecodeError"><code class="docutils literal notranslate"><span class="pre">raiiafDecodeError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raiiaf.core.exceptions.raiiafEnvChunkError"><code class="docutils literal notranslate"><span class="pre">raiiafEnvChunkError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raiiaf.core.exceptions.raiiafImageError"><code class="docutils literal notranslate"><span class="pre">raiiafImageError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raiiaf.core.exceptions.raiiafLatentError"><code class="docutils literal notranslate"><span class="pre">raiiafLatentError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raiiaf.core.exceptions.raiiafMetadataError"><code class="docutils literal notranslate"><span class="pre">raiiafMetadataError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raiiaf.core.header.header_init"><code class="docutils literal notranslate"><span class="pre">header_init()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raiiaf.core.header.header_parse"><code class="docutils literal notranslate"><span class="pre">header_parse()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#raiiaf.core.header.header_validate"><code class="docutils literal notranslate"><span class="pre">header_validate()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -636,7 +1162,7 @@ Returns the packed header bytes.
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="usage.html" title="previous chapter">Usage</a></li>
-      <li>Next: <a href="api/gen5.html" title="next chapter">gen5</a></li>
+      <li>Next: <a href="api/raiiaf.html" title="next chapter">raiiaf</a></li>
   </ul></li>
 </ul>
 </div>

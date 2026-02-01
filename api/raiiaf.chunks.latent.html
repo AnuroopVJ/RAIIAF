@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>raiiaf.chunks.latent &#8212; RAIIAF 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="raiiaf.chunks.metadata" href="raiiaf.chunks.metadata.html" />
+    <link rel="prev" title="raiiaf.chunks.image" href="raiiaf.chunks.image.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-raiiaf.chunks.latent">
+<span id="raiiaf-chunks-latent"></span><h1>raiiaf.chunks.latent<a class="headerlink" href="#module-raiiaf.chunks.latent" title="Link to this heading">¶</a></h1>
+<p>Latent chunk utilities for RAIIAF.</p>
+<p>This module provides functionality to validate, pack, compress, and parse latent
+arrays as RAIIAF LATN chunks. It supports compressed (zstd + zfpy) and
+uncompressed representations and exposes helpers for lazy loading.</p>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#raiiaf.chunks.latent.raiiafLatent" title="raiiaf.chunks.latent.raiiafLatent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raiiafLatent</span></code></a>()</p></td>
+<td><p>Operations for RAIIAF latent (LATN) chunks.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="raiiaf.chunks.latent.raiiafLatent">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">raiiaf.chunks.latent.</span></span><span class="sig-name descname"><span class="pre">raiiafLatent</span></span><a class="reference internal" href="../_modules/raiiaf/chunks/latent.html#raiiafLatent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.latent.raiiafLatent" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Operations for RAIIAF latent (LATN) chunks.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.chunks.latent.raiiafLatent.dtype_from_flags">
+<span class="sig-name descname"><span class="pre">dtype_from_flags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dtype</span></span></span><a class="reference internal" href="../_modules/raiiaf/chunks/latent.html#raiiafLatent.dtype_from_flags"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.latent.raiiafLatent.dtype_from_flags" title="Link to this definition">¶</a></dt>
+<dd><p>Map 4-byte chunk flags to a NumPy dtype.</p>
+<p>Handles null-padding and validates known types.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>flags</strong> (<em>bytes</em>) – 4-byte flag field from the chunk header (e.g., b”F16&quot;).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Corresponding dtype (float16 or float32).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.dtype</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the flag does not correspond to a known dtype.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.chunks.latent.raiiafLatent.iter_lazy_latents">
+<span class="sig-name descname"><span class="pre">iter_lazy_latents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_records</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/raiiaf/chunks/latent.html#raiiafLatent.iter_lazy_latents"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.latent.raiiafLatent.iter_lazy_latents" title="Link to this definition">¶</a></dt>
+<dd><p>Yield callables for each latent chunk to enable lazy loading.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – Path to the RAIIAF file.</p></li>
+<li><p><strong>chunk_records</strong> (<em>list</em>) – List of manifest chunk records.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Callable[[], np.ndarray]</em> – A function that loads and returns each latent array.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.chunks.latent.raiiafLatent.latent_compressor">
+<span class="sig-name descname"><span class="pre">latent_compressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chunk_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_flags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="../_modules/raiiaf/chunks/latent.html#raiiafLatent.latent_compressor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.latent.raiiafLatent.latent_compressor" title="Link to this definition">¶</a></dt>
+<dd><p>Compress a latent array into a LATN chunk.</p>
+<p>The header is compressed with Zstd and payload with ZFPY (optionally lossy).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>chunk_type</strong> (<em>bytes</em>) – 4-byte chunk identifier (b”LATN”).</p></li>
+<li><p><strong>chunk_flags</strong> (<em>bytes</em>) – 4-byte dtype flags (b”F16&quot; or b”F32&quot;).</p></li>
+<li><p><strong>data</strong> (<em>np.ndarray</em>) – NumPy array to compress (float16/float32).</p></li>
+<li><p><strong>tolerance</strong> (<em>float</em>) – zfpy lossy tolerance; 0.0 for lossless. Defaults to 0.0.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary with keys ‘chunk’, ‘len_header’, ‘len_data’.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.chunks.latent.raiiafLatent.latent_dtype_validator">
+<span class="sig-name descname"><span class="pre">latent_dtype_validator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">latent_array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/raiiaf/chunks/latent.html#raiiafLatent.latent_dtype_validator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.latent.raiiafLatent.latent_dtype_validator" title="Link to this definition">¶</a></dt>
+<dd><p>Validate latent data type and values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>latent_array</strong> (<em>np.ndarray</em>) – Latent array to validate.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if valid.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafLatentError" title="raiiaf.core.exceptions.raiiafLatentError"><strong>raiiafLatentError</strong></a> – If dtype or values are invalid (NaN/Inf or unsupported dtype).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.chunks.latent.raiiafLatent.latent_packer">
+<span class="sig-name descname"><span class="pre">latent_packer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">latent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_offset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_records</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">should_compress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convert_float16</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="../_modules/raiiaf/chunks/latent.html#raiiafLatent.latent_packer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.latent.raiiafLatent.latent_packer" title="Link to this definition">¶</a></dt>
+<dd><p>Pack latent arrays into chunk bytes and append manifest records.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>latent</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>np.ndarray</em><em>]</em>) – Mapping of latent key to array.</p></li>
+<li><p><strong>file_offset</strong> (<em>int</em>) – Current file offset where the first latent chunk will be placed.</p></li>
+<li><p><strong>chunk_records</strong> (<em>Optional</em><em>[</em><em>list</em><em>]</em>) – Mutable list to append chunk records to.</p></li>
+<li><p><strong>should_compress</strong> (<em>bool</em>) – Whether to compress using zstd+zfpy. Defaults to True.</p></li>
+<li><p><strong>convert_float16</strong> (<em>bool</em>) – Convert arrays to float16 before storage. Defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of chunk byte strings (to be concatenated externally).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[bytes]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafLatentError" title="raiiaf.core.exceptions.raiiafLatentError"><strong>raiiafLatentError</strong></a> – If inputs are invalid or unsupported dtypes are used.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.chunks.latent.raiiafLatent.latent_parser">
+<span class="sig-name descname"><span class="pre">latent_parser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chunk</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compressed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/raiiaf/chunks/latent.html#raiiafLatent.latent_parser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.latent.raiiafLatent.latent_parser" title="Link to this definition">¶</a></dt>
+<dd><p>Parse a latent chunk and return the latent array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>chunk</strong> (<em>Union</em><em>[</em><em>bytes</em><em>, </em><em>dict</em><em>]</em>) – Raw bytes for uncompressed chunks or dict with
+keys ‘chunk’, ‘len_header’, ‘len_data’ for compressed chunks.</p></li>
+<li><p><strong>shape</strong> (<em>tuple</em>) – Expected array shape.</p></li>
+<li><p><strong>compressed</strong> (<em>bool</em>) – Whether the chunk is compressed. Defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Parsed latent array with the expected dtype and shape.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafLatentError" title="raiiaf.core.exceptions.raiiafLatentError"><strong>raiiafLatentError</strong></a> – If the chunk is malformed or decompression fails.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.chunks.latent.raiiafLatent.latent_shape_validator">
+<span class="sig-name descname"><span class="pre">latent_shape_validator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">latent_array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expected_dims</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_dimension_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8192</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../_modules/raiiaf/chunks/latent.html#raiiafLatent.latent_shape_validator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.latent.raiiafLatent.latent_shape_validator" title="Link to this definition">¶</a></dt>
+<dd><p>Validate latent array shape and dimensions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>latent_array</strong> (<em>np.ndarray</em>) – Latent array to validate.</p></li>
+<li><p><strong>expected_dims</strong> (<em>int</em>) – Expected number of dimensions (default: 4 for NCHW).</p></li>
+<li><p><strong>max_dimension_size</strong> (<em>int</em>) – Maximum allowed size for any single dimension.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if valid.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafLatentError" title="raiiaf.core.exceptions.raiiafLatentError"><strong>raiiafLatentError</strong></a> – If validation fails.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="raiiaf.chunks.latent.raiiafLatent.make_lazy_latent_loader">
+<span class="sig-name descname"><span class="pre">make_lazy_latent_loader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_record</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/raiiaf/chunks/latent.html#raiiafLatent.make_lazy_latent_loader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#raiiaf.chunks.latent.raiiafLatent.make_lazy_latent_loader" title="Link to this definition">¶</a></dt>
+<dd><p>Create a callable that lazily loads the latent array on demand.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em>) – Path to the RAIIAF file.</p></li>
+<li><p><strong>chunk_record</strong> (<em>dict</em>) – Manifest record describing the latent chunk.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A function that loads and returns the latent array.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Callable[[], np.ndarray]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="raiiaf.core.exceptions.html#raiiaf.core.exceptions.raiiafLatentError" title="raiiaf.core.exceptions.raiiafLatentError"><strong>raiiafLatentError</strong></a> – If the chunk cannot be loaded from the file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">RAIIAF</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../api.html#package-index">Package Index</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="raiiaf.html">raiiaf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="raiiaf.handlers.file_handler.html">raiiaf.handlers.file_handler</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">raiiaf.chunks.latent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="raiiaf.chunks.image.html">raiiaf.chunks.image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="raiiaf.chunks.env.html">raiiaf.chunks.env</a></li>
+<li class="toctree-l3"><a class="reference internal" href="raiiaf.chunks.metadata.html">raiiaf.chunks.metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="raiiaf.core.constants.html">raiiaf.core.constants</a></li>
+<li class="toctree-l3"><a class="reference internal" href="raiiaf.core.exceptions.html">raiiaf.core.exceptions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="raiiaf.core.header.html">raiiaf.core.header</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-raiiaf">Top-level Package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-raiiaf.handlers.file_handler">Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-raiiaf.chunks.latent">Chunks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#module-raiiaf.core.constants">Core</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../api.html">API Reference</a><ul>
+  <li><a href="raiiaf.html">raiiaf</a><ul>
+  <li><a href="raiiaf.chunks.html">raiiaf.chunks</a><ul>
+      <li>Previous: <a href="raiiaf.chunks.image.html" title="previous chapter">raiiaf.chunks.image</a></li>
+      <li>Next: <a href="raiiaf.chunks.metadata.html" title="next chapter">raiiaf.chunks.metadata</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Anuroop V J.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.0.4</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/api/raiiaf.chunks.latent.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

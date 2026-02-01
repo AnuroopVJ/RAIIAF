@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>raiiaf.chunks.image &#8212; RAIIAF 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for raiiaf.chunks.image</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Image chunk utilities for RAIIAF.</span>
+
+<span class="sd">Provides validation, packing (compression) and parsing for image data chunks</span>
+<span class="sd">(DATA). Uses zstd for compression.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">io</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">zstandard</span><span class="w"> </span><span class="kn">import</span> <span class="n">ZstdCompressor</span><span class="p">,</span> <span class="n">ZstdDecompressor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..core.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">raiiafImageError</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">struct</span>
+
+
+<div class="viewcode-block" id="raiiafImage">
+<a class="viewcode-back" href="../../../api/raiiaf.chunks.image.html#raiiaf.chunks.image.raiiafImage">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">raiiafImage</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Operations for RAIIAF image (DATA) chunks.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<div class="viewcode-block" id="raiiafImage.image_bytes_validator">
+<a class="viewcode-back" href="../../../api/raiiaf.chunks.image.html#raiiaf.chunks.image.raiiafImage.image_bytes_validator">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">image_bytes_validator</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_bytes</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Validate image bytes.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            image_bytes (bytes): Image bytes to validate.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if the image bytes form a valid image.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            raiiafImageError: If validation fails.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">img</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">image_bytes</span><span class="p">)</span>
+            <span class="k">with</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">img</span><span class="p">)</span> <span class="k">as</span> <span class="n">img</span><span class="p">:</span>
+                <span class="n">img</span><span class="o">.</span><span class="n">verify</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">raiiafImageError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid image bytes: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="raiiafImage.image_data_chunk_builder">
+<a class="viewcode-back" href="../../../api/raiiaf.chunks.image.html#raiiaf.chunks.image.raiiafImage.image_data_chunk_builder">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">image_data_chunk_builder</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image_binary</span><span class="p">:</span> <span class="nb">bytes</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Build a compressed image DATA chunk from raw image bytes.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            image_binary (bytes): Raw PNG image bytes to store.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bytes: Compressed chunk bytes suitable for writing to the RAIIAF file.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            raiiafImageError: If the chunk cannot be constructed.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">image_bytes_validator</span><span class="p">(</span><span class="n">image_binary</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">chunk_type</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;DATA&quot;</span>
+            <span class="n">chunk_flags</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;0000&quot;</span>
+            <span class="n">chunk_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">image_binary</span><span class="p">)</span>
+            <span class="n">chunk_header</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;&lt;4s 4s I&quot;</span><span class="p">,</span> <span class="n">chunk_type</span><span class="p">,</span> <span class="n">chunk_flags</span><span class="p">,</span> <span class="n">chunk_size</span><span class="p">)</span>
+            <span class="n">chunk</span> <span class="o">=</span> <span class="n">chunk_header</span> <span class="o">+</span> <span class="n">image_binary</span>
+            <span class="n">compressed_chunk</span> <span class="o">=</span> <span class="n">ZstdCompressor</span><span class="p">()</span><span class="o">.</span><span class="n">compress</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">compressed_chunk</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">raiiafImageError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to build image data chunk: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span></div>
+
+
+<div class="viewcode-block" id="raiiafImage.image_data_chunk_parser">
+<a class="viewcode-back" href="../../../api/raiiaf.chunks.image.html#raiiaf.chunks.image.raiiafImage.image_data_chunk_parser">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">image_data_chunk_parser</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">compressed_chunk</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Parse a compressed image DATA chunk.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            compressed_chunk (bytes): Compressed image data chunk.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            dict: Parsed info with keys &#39;chunk_type&#39;, &#39;chunk_flags&#39;, &#39;chunk_size&#39;, &#39;image_data&#39;.</span>
+
+<span class="sd">        Raises:</span>
+<span class="sd">            raiiafImageError: If decompression or parsing fails.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">decompressor</span> <span class="o">=</span> <span class="n">ZstdDecompressor</span><span class="p">()</span>
+            <span class="n">chunk</span> <span class="o">=</span> <span class="n">decompressor</span><span class="o">.</span><span class="n">decompress</span><span class="p">(</span><span class="n">compressed_chunk</span><span class="p">)</span>
+            <span class="n">chunk_type</span><span class="p">,</span> <span class="n">chunk_flags</span><span class="p">,</span> <span class="n">chunk_size</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;&lt;4s 4s I&quot;</span><span class="p">,</span> <span class="n">chunk</span><span class="p">[:</span><span class="mi">12</span><span class="p">])</span>
+            <span class="n">image_data</span> <span class="o">=</span> <span class="n">chunk</span><span class="p">[</span><span class="mi">12</span> <span class="p">:</span> <span class="mi">12</span> <span class="o">+</span> <span class="n">chunk_size</span><span class="p">]</span>
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s2">&quot;chunk_type&quot;</span><span class="p">:</span> <span class="n">chunk_type</span><span class="p">,</span>
+                <span class="s2">&quot;chunk_flags&quot;</span><span class="p">:</span> <span class="n">chunk_flags</span><span class="p">,</span>
+                <span class="s2">&quot;chunk_size&quot;</span><span class="p">:</span> <span class="n">chunk_size</span><span class="p">,</span>
+                <span class="s2">&quot;image_data&quot;</span><span class="p">:</span> <span class="n">image_data</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">raiiafImageError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to parse image data chunk: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span></div>
+</div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">RAIIAF</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API Reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2026, Anuroop V J.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.0.4</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

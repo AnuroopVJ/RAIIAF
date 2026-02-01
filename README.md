@@ -1,6 +1,8 @@
 # .raiiaf - AI-native Context Storage
 
 ![bannerimage](raiiaf_img.png)
+[![Build and Deploy Docs](https://github.com/AnuroopVJ/RAIIAF/actions/workflows/docs.yml/badge.svg)](https://github.com/AnuroopVJ/RAIIAF/actions/workflows/docs.yml)
+[![CI](https://github.com/AnuroopVJ/RAIIAF/actions/workflows/ci.yml/badge.svg)](https://github.com/AnuroopVJ/RAIIAF/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 ![PyPI](https://img.shields.io/pypi/v/raiiaf)
 
